@@ -120,6 +120,10 @@ in {
 
   qt = {
     enable = true;
-    platformTheme.name = "kde";
+    style = {
+          name = "adwaita-dark";
+          package = pkgs.adwaita-qt;
+      };
+    #platformTheme.name = "kde";
   };
 }

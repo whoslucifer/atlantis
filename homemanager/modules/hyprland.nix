@@ -6,7 +6,7 @@
   hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
   plugins = inputs.hyprland-plugins.packages.${pkgs.system};
 
-  launcher = pkgs.writeShellScriptBin "Hyprland" ''
+  launcher = pkgs.writeShellScriptBin "hypr" ''
     #!/${pkgs.bash}/bin/bash
 
     export WLR_NO_HARDWARE_CURSORS=1
@@ -36,9 +36,9 @@ in {
         "GTK_IM_MODULE, fcitx"
         "QT_IM_MODULE, fcitx"
         "XMODIFIERS, @im=fcitx"
-        "QT_QPA_PLATFORM, wayland"
+        "QT_QPA_PLATFORM, wayland;xcb"
         "QT_QPA_PLATFORMTHEME, qt5ct"
-        "QT_STYLE_OVERRIDE,kvantum"
+        #"QT_STYLE_OVERRIDE,kvantum"
         "WLR_NO_HARDWARE_CURSORS, 1"
       ];
       monitor = [",preferred,auto,1"];
