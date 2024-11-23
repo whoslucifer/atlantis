@@ -11,11 +11,15 @@
     ollama
     pywal
     sassc
+    material-symbols
     material-icons
     hypridle
     #hyprlock
     #blueberry
     cloudflare-warp
+    gsettings-desktop-schemas
+    matugen
+    #materialyoucolor
     (python312.withPackages (p: [
       p.material-color-utilities
       p.pywayland
@@ -28,8 +32,13 @@
     # configDir = ./.config/ags;
 
     extraPackages = with pkgs; [
+      #hicolor-icon-theme
       gtksourceview
+      material-symbols
+      material-icons
+      matugen
       gtksourceview4
+      gsettings-desktop-schemas
       ollama
       python312Packages.material-color-utilities
       python312Packages.pywayland

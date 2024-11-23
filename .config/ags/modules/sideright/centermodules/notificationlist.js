@@ -101,7 +101,7 @@ export default (props) => {
         setup: (self) => self.hook(Notifications, (self) => {
             self.revealChild = Notifications.notifications.length > 0;
         }),
-        child: ListActionButton('clear_all', getString('Clear'), () => {
+        child: ListActionButton('delete_sweep', getString('Clear'), () => {
             Notifications.clear();
             const kids = notificationList.get_children();
             for (let i = 0; i < kids.length; i++) {

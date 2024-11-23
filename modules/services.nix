@@ -4,18 +4,25 @@
   username,
   ...
 }: {
-  # Services to start
+  
+  # services to start
   services = {
     xserver = {
-      enable = false;
-      videoDrivers = ["intel"];
+      enable = true;
+      #videoDrivers = ["intel"];
       xkb = {
         layout = "us";
         variant = "";
       };
     };
-
-    greetd = {
+    
+    displayManager = {
+        sessionPackages = [ pkgs.hyprland ];
+        sddm.enable = true;
+        sddm.theme = "${import ./system/sddm.nix {inherit pkgs; }}";
+    };
+    
+    /*greetd = {
       enable = true;
       vt = 3;
       settings = {
@@ -24,7 +31,7 @@
           command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland"; # start Hyprland with a TUI login manager
         };
       };
-    };
+    };*/
 
     smartd = {
       enable = false;

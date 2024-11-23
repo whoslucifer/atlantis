@@ -2,23 +2,7 @@
   inputs,
   pkgs,
   ...
-}: let
-  hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  plugins = inputs.hyprland-plugins.packages.${pkgs.system};
-
-  launcher = pkgs.writeShellScriptBin "hypr" ''
-    #!/${pkgs.bash}/bin/bash
-
-    export WLR_NO_HARDWARE_CURSORS=1
-    export _JAVA_AWT_WM_NONREPARENTING=1
-
-    exec ${hyprland}/bin/Hyprland
-  '';
-in {
-  home.packages = with pkgs; [
-    launcher
-    temurin-jre-bin
-  ];
+}: {
 
   xdg.desktopEntries."org.gnome.Settings" = {
     name = "Settings";
@@ -31,6 +15,14 @@ in {
 
   wayland.windowManager.hyprland = {
     enable = true;
+    #xwayland.enable = true; # crashes discord for some reason
+    package = inputs.hyprland.packages.${pkgs.system}.default;
+
+    plugins = [
+      # inputs.hyprland-hyprspace.packages.${pkgs.system}.default
+      # inputs.hyprgrass.packages.${pkgs.system}.default
+    ];
+    
     settings = {
       env = [
         "GTK_IM_MODULE, fcitx"
@@ -168,7 +160,7 @@ in {
         SLURP_COMMAND = "$(slurp -d -c eedcf5BB -b 4f425644 -s 00000000)";
       in [
         "Super, A, exec, anyrun"
-        "Super, B, exec, zen"
+        "Super, B, exec, google-chrome-stable"
         "Alt, C, exec, google-chrome-stable --app='https://chatgpt.com'"
         "Alt, G, exec, google-chrome-stable --app='https://gemini.google.com/app'"
         "Super, Tab, exec, foot --override shell=fish"
@@ -180,7 +172,7 @@ in {
         ''Super, I, exec, XDG_CURRENT_DESKTOP="gnome" gnome-control-center''
         "Control+Super, V, exec, pavucontrol"
         "Control+Shift, Escape, exec, gnome-system-monitor"
-        "Super, Period, exec, pkill fuzzel || ~/.local/bin/fuzzel-emoji"
+        "Super, Period, exec, pkill fuzzel || ~/.config/ags/scripts/quickscripts/fuzzel-emoji"
         "Super, Q, killactive, "
         "Super+Alt, Space, togglefloating, "
         "Shift+Super+Alt, Q, exec, hyprctl kill"
@@ -328,6 +320,8 @@ in {
         "float, ^(steam)$"
         "float, Waydroid"
         "size 450 900, Waydroid"
+        "float, polkit-gnome-authentication-agent-1"
+        "size 300 300, polkit-gnome-authentication-agent-1"
         "float, Genymotion Player"
         "float, ^(blueberry.py)$"
         "pin, ^(showmethekey-gtk)$"
@@ -365,6 +359,6 @@ in {
       source = [
         "./colors.conf"
       ];
-    };
+    };  
   };
 }

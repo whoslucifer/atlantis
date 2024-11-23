@@ -8,7 +8,7 @@
       (mpv.override {scripts = [mpvScripts.mpris];})
       d-spy
       dolphin
-      figma-linux
+      #figma-linux
       kolourpaint
       #github-desktop
       nautilus
@@ -43,6 +43,7 @@
       mousai # shazam alternative
       stirling-pdf # best pdf actions tool
       piper # reassign mouse buttons
+      gimp
       bat
       eza
       fd
@@ -59,7 +60,6 @@
       unzip
       glib
       foot
-      kitty
       starship
       showmethekey
       vscode
@@ -93,6 +93,7 @@
       wlsunset
       wl-clipboard
       wf-recorder
+      
 
       # langs
       gjs

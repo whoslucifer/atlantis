@@ -4,7 +4,7 @@
   ...
 }: {
   # Extra Module Options
-  drivers.intel.enable = true;
+  #drivers.intel.enable = true;
 
   vm.guest-services.enable = false;
   local.hardware-clock.enable = false;
@@ -21,6 +21,7 @@
       pkgs.xdg-desktop-portal
     ];
   };
+
 
   # zram
   zramSwap = {
@@ -63,13 +64,6 @@
       options = "--delete-older-than 7d";
     };
   };
-
-
-     /* # OpenGL
-  hardware.graphics = {
-    enable = true;
-  }; */
-  
 
   console.keyMap = "us";
 

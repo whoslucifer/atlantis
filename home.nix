@@ -14,7 +14,7 @@
     #./homemanager/modules/zoom.nix
     ./homemanager/modules/ags.nix
     ./homemanager/modules/hyprland.nix
-    #./homemanager/modules/waybar.nix
+    #./homemanager/modules/stylix.nix
     ./homemanager/modules/anyrun.nix
     ./homemanager/modules/lazygit.nix
     ./homemanager/modules/xdg.nix
@@ -23,12 +23,11 @@
     #./homemanager/modules/nautilus.nix
     ./homemanager/modules/media.nix
     ./homemanager/modules/productivity.nix
+    #./homemanager/modules/insecure.nix
 
     ./homemanager/modules/developer/go.nix
     ./homemanager/modules/starship.nix
     #./homemanager/modules/browser.nix
-    #./homemanager/modules/sway.nix
-    #./homemanager/modules/spicetify.nix
   ];
 
   home.username = "asherah";

@@ -28,6 +28,7 @@ in {
 
     ../../modules/system/locales.nix
     ../../modules/system/networking.nix
+    ../../modules/system/hotspot.nix
     ../../modules/system/boot.nix
     ../../modules/system/boot-loader.nix
     #../../modules/system/laptop.nix
@@ -38,17 +39,16 @@ in {
     ../../modules/sound.nix
     ../../modules/spotify.nix
     ../../modules/zen-browser.nix
+    #../../modules/thorium.nix
     ../../modules/services.nix
     ../../modules/security.nix
+    ../../modules/insecure.nix
 
     ../../modules/developer/developer.nix
     ../../modules/developer/mysql.nix
     ../../modules/developer/postgresql.nix
 
-    ../../modules/pentester/pentester.nix
-    ../../modules/pentester/blueducky.nix
-    ../../modules/pentester/networks.nix
-    ../../modules/pentester/ngrok.nix
+    ../../modules/pentester/default.nix
 
     ../../modules/utils.nix
   ];

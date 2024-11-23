@@ -126,8 +126,8 @@ export const ModuleCloudflareWarp = async (props = {}) => {
         onClicked: (self) => {
             self.attribute.enabled = !self.attribute.enabled;
             self.toggleClassName('sidebar-button-active', self.attribute.enabled);
-            if (self.attribute.enabled) Utils.execAsync('sudo warp-svc && warp-cli connect').catch(print)
-            else Utils.execAsync('warp-cli disconnect && sudo pkill warp-svc').catch(print);
+            if (self.attribute.enabled) Utils.execAsync('pkexec warp-svc && warp-cli connect').catch(print)
+            else Utils.execAsync('warp-cli disconnect && pkexec pkill warp-svc').catch(print);
         },
         child: Widget.Icon({
             icon: 'cloudflare-dns-symbolic',

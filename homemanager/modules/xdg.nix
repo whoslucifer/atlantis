@@ -1,5 +1,5 @@
 {...}: let
-  browser = "zen.desktop";
+  browser = "google-chrome.desktop";
 in {
   xdg = {
     enable = true;
@@ -26,7 +26,7 @@ in {
         "application/xhtml+xml" = browser;
         "text/html" = browser;
         "x-scheme-handler/about" = browser;
-        "x-scheme-handler/chrome" = ["zen.desktop"];
+        "x-scheme-handler/chrome" = ["google-chrome.desktop"];
         "x-scheme-handler/ftp" = browser;
         "x-scheme-handler/http" = browser;
         "x-scheme-handler/https" = browser;

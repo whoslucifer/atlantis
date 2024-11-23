@@ -22,10 +22,13 @@
     xdg-utils
     networkmanagerapplet
     librsvg
+    usbutils
+    iw # networking
     
     #for ags new 
     cloudflare-warp
     cloudflared
+    #nerdfonts
     pinokio #installs ai tools locally
 
   ];

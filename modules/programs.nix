@@ -41,7 +41,7 @@
     #};
 
     xwayland.enable = true;
-
+    
     dconf.enable = true;
     seahorse.enable = true;
     fuse.userAllowOther = true;
@@ -54,15 +54,11 @@
  
   #for ags
   environment.systemPackages = with pkgs; [
-    #material-icons
-    #material-symbols
-    #bc
-    libstdcxx5
 
-    # for opengl hashcat
-    intel-compute-runtime
-    ocl-icd
-    clinfo
+    #sddm
+    libsForQt5.qt5.qtquickcontrols2
+    libsForQt5.qt5.qtgraphicaleffects
+
   ];
 
 }

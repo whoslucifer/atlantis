@@ -7,6 +7,16 @@ import { MaterialIcon } from './materialicon.js';
 import { setupCursorHover } from "../.widgetutils/cursorhover.js";
 import { AnimatedCircProg } from "./cairo_circularprogress.js";
 
+//custom line to fix chromium browser notifs
+function processNotificationBody(body, appEntry) {
+    // Only process Chrome/Chromium notifications
+    if (appEntry?.toLowerCase().includes('chrom')) {
+        // Remove the first line
+        return body.split('\n\n').slice(1).join('\n\n');
+    }
+    return body;
+}
+
 function guessMessageType(summary) {
     const str = summary.toLowerCase();
     if (str.includes('reboot')) return 'restart_alt';
@@ -38,9 +48,42 @@ const getFriendlyNotifTimeString = (timeObject) => {
         return messageTime.format(userOptions.time.dateFormat);
 }
 
+/*function notify(notifObject) {
+    console.log(JSON.stringify(notifObject, null, 4)); // Print the object
+    // Rest of your notification handling logic
+}*/
+
 const NotificationIcon = (notifObject) => {
+
+    // If the notification comes from Chrome/Chromium, try to get the local image path
+    if (notifObject.appEntry?.toLowerCase().includes('chrom')) {
+        // Check if either 'image_path' or 'image-path' exists in the notification object
+        const imagePath = notifObject['image_path'] || notifObject['image-path'];
+        
+        console.log("notifObject:", notifObject);
+
+        
+        if (imagePath) {
+            // Prepend 'file://' to the image path
+            const fileUrl = `file://${imagePath}`;
+        
+            return Box({
+                valign: Gtk.Align.CENTER,
+                hexpand: false,
+                className: 'notif-icon',
+                css: `
+                    background-image: url("${fileUrl}");
+                    background-size: auto 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                `,
+            });
+        }
+    }
+
     // { appEntry, appIcon, image }, urgency = 'normal'
     if (notifObject.image) {
+        console.log("notifObject:", notifObject);
         return Box({
             valign: Gtk.Align.CENTER,
             hexpand: false,
@@ -123,7 +166,7 @@ export default ({
         },
         setup: (self) => {
             self.on("button-press-event", () => {
-                wholeThing.attribute.held = true;
+                wholeThing.attribute.held = true;label: processNotificationBody(notifObject.body, notifObject.appEntry).split("\n")[0]
                 notificationContent.toggleClassName(`${isPopup ? 'popup-' : ''}notif-clicked-${notifObject.urgency}`, true);
                 Utils.timeout(800, () => {
                     if (wholeThing?.attribute.held) {
@@ -168,7 +211,7 @@ export default ({
             justify: Gtk.Justification.LEFT,
             maxWidthChars: 1,
             truncate: 'end',
-            label: notifObject.body.split("\n")[0],
+            label: processNotificationBody(notifObject.body, notifObject.appEntry).split("\n")[0],
         }),
     });
     const notifTextExpanded = Revealer({
@@ -187,7 +230,7 @@ export default ({
                     justify: Gtk.Justification.LEFT,
                     maxWidthChars: 1,
                     wrap: true,
-                    label: notifObject.body,
+                    label: processNotificationBody(notifObject.body, notifObject.appEntry),
                 }),
                 Box({
                     className: 'notif-actions spacing-h-5',

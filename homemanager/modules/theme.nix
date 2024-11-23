@@ -11,6 +11,8 @@
     installPhase = ''
       mkdir -p $out/share/icons
       mv * $out/share/icons
+       # Add Breeze as fallback in index.theme
+      sed -i '/^Inherits=/ s/$/adwaita/' $out/share/icons/index.theme || echo 'Inherits=adwaita' >> $out/share/icons/index.theme
     '';
   };
 
@@ -45,7 +47,12 @@ in {
       # themes
       adwaita-qt6
       adw-gtk3
-      material-symbols
+      #libsForQt5.breeze-icons
+      #gnome-icon-theme
+      gnome.adwaita-icon-theme
+      #adwaita-icon-theme-legacy
+      #hicolor-icon-theme
+      #material-symbols
       nerdfonts
       noto-fonts
       noto-fonts-cjk-sans
@@ -121,9 +128,9 @@ in {
   qt = {
     enable = true;
     style = {
-          name = "adwaita-dark";
+          name = "adwaita-qt";
           package = pkgs.adwaita-qt;
       };
-    #platformTheme.name = "kde";
+    platformTheme.name = "gtk";
   };
 }

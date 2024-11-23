@@ -5,7 +5,12 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {
+      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };   
+
+    stylix.url = "github:danth/stylix";
 
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
@@ -36,11 +41,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    matugen = {
-      url = "github:/InioX/Matugen";
-      # ref = "refs/tags/matugen-v0.10.0"
-    };
-
     more-waita = {
       url = "github:somepaulo/MoreWaita";
       flake = false;
@@ -53,6 +53,7 @@
     nixpkgs,
     nixpkgs-stable,
     nix-index-database,
+    stylix,
     ngrok,
     home-manager,
     ...
@@ -108,6 +109,8 @@
 
         modules = [
           ./home.nix
+
+          stylix.homeManagerModules.stylix
         ];
       };
     };
