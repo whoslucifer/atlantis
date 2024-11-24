@@ -215,7 +215,7 @@ export const ModuleIdleInhibitor = (props = {}) => Widget.Button({ // TODO: Make
         if (self.attribute.enabled) Utils.execAsync(['bash', '-c', `pidof wayland-idle-inhibitor.py || ${App.configDir}/scripts/wayland-idle-inhibitor.py`]).catch(print)
         else Utils.execAsync('pkill -f wayland-idle-inhibitor.py').catch(print);
     },
-    child: MaterialIcon('coffee', 'norm'),
+    child: MaterialIcon('earthquake', 'norm'),
     setup: (self) => {
         setupCursorHover(self);
         self.attribute.enabled = !!exec('pidof wayland-idle-inhibitor.py');
@@ -223,6 +223,39 @@ export const ModuleIdleInhibitor = (props = {}) => Widget.Button({ // TODO: Make
     },
     ...props,
 });
+
+/*export const ModuleTor = async (props = {}) => {
+    if (!exec(`bash -c 'command -v tor'`)) return null;
+    return Widget.Button({
+        attribute: {
+            enabled: false,
+        },
+        className: 'txt-small sidebar-iconbutton',
+        tooltipText: getString('TOR'),
+        onClicked: (self) => {
+            self.attribute.enabled = !self.attribute.enabled;
+            self.toggleClassName('sidebar-button-active', self.attribute.enabled);
+            if (self.attribute.enabled) Utils.execAsync('pkexec tor').catch(print)
+            else Utils.execAsync('pkexec pkill tor').catch(print);
+        },
+        child: Widget.Icon({
+            icon: 'vpn_lock',
+            className: 'txt-norm',
+        }),
+        setup: (self) => {
+            setupCursorHover(self);
+            self.attribute.enabled = exec(`bash -c 'tor'`);
+            self.toggleClassName('sidebar-button-active', self.attribute.enabled);
+        },
+        ...props,
+    });
+}*/
+
+/*export const silenceButton = ListActionButton('notifications_paused', getString('Silence'), (self) => {
+        Notifications.dnd = !Notifications.dnd;
+        self.toggleClassName('notif-listaction-btn-enabled', Notifications.dnd);
+});*/
+
 
 export const ModuleReloadIcon = (props = {}) => Widget.Button({
     ...props,

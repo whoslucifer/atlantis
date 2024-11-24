@@ -48,42 +48,27 @@ const getFriendlyNotifTimeString = (timeObject) => {
         return messageTime.format(userOptions.time.dateFormat);
 }
 
-/*function notify(notifObject) {
-    console.log(JSON.stringify(notifObject, null, 4)); // Print the object
-    // Rest of your notification handling logic
-}*/
-
 const NotificationIcon = (notifObject) => {
 
-    // If the notification comes from Chrome/Chromium, try to get the local image path
-    if (notifObject.appEntry?.toLowerCase().includes('chrom')) {
-        // Check if either 'image_path' or 'image-path' exists in the notification object
-        const imagePath = notifObject['image_path'] || notifObject['image-path'];
-        
-        console.log("notifObject:", notifObject);
-
-        
-        if (imagePath) {
-            // Prepend 'file://' to the image path
-            const fileUrl = `file://${imagePath}`;
-        
-            return Box({
-                valign: Gtk.Align.CENTER,
-                hexpand: false,
-                className: 'notif-icon',
-                css: `
-                    background-image: url("${fileUrl}");
-                    background-size: auto 100%;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                `,
-            });
-        }
+    // { appEntry, appIcon, image }, urgency = 'normal'
+    if(notifObject.hints?.image_path?.deepUnpack) {
+        const imagePath = notifObject.hints.image_path.deepUnpack();
+        return Box({
+            valign: Gtk.Align.CENTER,
+            hexpand: false,
+            className: 'notif-icon',
+            css: `
+                background-image: url("${imagePath}");
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            `,
+        });
     }
 
     // { appEntry, appIcon, image }, urgency = 'normal'
     if (notifObject.image) {
-        console.log("notifObject:", notifObject);
+        //console.log("notifObject:", notifObject);
         return Box({
             valign: Gtk.Align.CENTER,
             hexpand: false,

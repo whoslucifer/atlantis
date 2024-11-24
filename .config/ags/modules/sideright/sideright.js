@@ -14,6 +14,7 @@ import {
     ModulePowerIcon,
     ModuleRawInput,
     ModuleCloudflareWarp
+    //ModuleTor
 } from "./quicktoggles.js";
 import ModuleNotificationList from "./centermodules/notificationlist.js";
 import ModuleAudioControls from "./centermodules/audiocontrols.js";
@@ -131,6 +132,23 @@ const togglesBox = Widget.Box({
     ]
 })
 
+const togglesBox2 = Widget.Box({
+    hpack: 'center',
+    className: 'sidebar-togglesbox spacing-h-5',
+    children: [
+        //ModuleTor,
+        //ToggleIconWifi(),
+        //ToggleIconBluetooth(),
+       // await ModuleRawInput(),
+        //await HyprToggleIcon('touchpad_mouse', 'No touchpad while typing', 'input:touchpad:disable_while_typing', {}),
+        //await ModuleNightLight(),
+        //await ModuleInvertColors(),
+        //ModuleIdleInhibitor(),
+        //await ModuleCloudflareWarp(),
+    ]
+ 
+})
+
 export const sidebarOptionsStack = ExpandingIconTabContainer({
     tabsHpack: 'center',
     tabSwitcherClassName: 'sidebar-icontabswitcher',
@@ -164,6 +182,7 @@ export default () => Box({
                     children: [
                         timeRow,
                         togglesBox,
+                        togglesBox2,
                     ]
                 }),
                 Box({
