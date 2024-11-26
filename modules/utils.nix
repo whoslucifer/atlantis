@@ -24,7 +24,8 @@
     librsvg
     usbutils
     iw # networking
-    
+    inxi
+
     #for ags new 
     cloudflare-warp
     cloudflared

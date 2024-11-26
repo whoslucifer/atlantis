@@ -19,6 +19,7 @@
       loupe
       vlc
       yad
+      blender
 
       # tools
       localsend

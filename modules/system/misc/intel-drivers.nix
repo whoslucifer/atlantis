@@ -1,24 +1,33 @@
-{ pkgs, ... }:
+{ lib, pkgs, config, ... }:
+with lib;
+let
+  cfg = config.drivers.intel;
+in
 {
+  options.drivers.intel = {
+    enable = mkEnableOption "Enable Intel Graphics Drivers";
+  };
+
+  config = mkIf cfg.enable {
+    services.xserver.videoDrivers = [ "intel" ];
+    nixpkgs.config.packageOverrides = pkgs: {
+      vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+    };
+
     # OpenGL
     hardware.graphics = {
-      enable = true;
-
       extraPackages = with pkgs; [
         intel-media-driver
-        intel-media-sdk
-        #intel-compute-runtime
-        #ocl-icd
-        #clinfo
-        mesa 
         intel-vaapi-driver
+        mesa
+        vpl-gpu-rt
+        clinfo
+        ocl-icd
+        intel-compute-runtime
         libvdpau-va-gl
         libva
-        libva-vdpau-driver
+			  libva-utils
       ];
     };
-    environment.systemPackages = with pkgs; [
-      mesa
-      intel-vaapi-driver
-    ];
+  };
 }
