@@ -8,7 +8,7 @@
     yt-dlp
 
     chromium
-    google-chrome
+    #google-chrome
     brave
   ];
 }

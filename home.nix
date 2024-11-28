@@ -12,7 +12,7 @@
     ./homemanager/modules/fzf.nix
     #./homemanager/modules/git.nix
     #./homemanager/modules/zoom.nix
-    ./homemanager/modules/cpags.nix
+    ./homemanager/modules/ags.nix
     #./homemanager/modules/sourceags.nix
     ./homemanager/modules/hyprland.nix
     #./homemanager/modules/stylix.nix

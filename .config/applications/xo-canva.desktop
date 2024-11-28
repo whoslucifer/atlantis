@@ -5,5 +5,5 @@ Terminal=false
 Type=Application
 Name=Canva
 Exec=google-chrome-stable --profile-directory=Default --app=https://canva.com
-Icon=/home/asherah/.local/share/applications/icons/canva.png
+Icon=/home/asherah/.local/share/applications/icons/canva.svg
 

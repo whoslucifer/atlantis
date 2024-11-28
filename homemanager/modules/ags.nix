@@ -17,7 +17,6 @@
     #hyprlock
     #blueberry
     gtksourceview
-    gtk-layer-shell
     gtksourceview4
     cloudflare-warp
     gsettings-desktop-schemas
@@ -41,7 +40,6 @@
       material-icons
       matugen
       gtksourceview4
-      gtk-layer-shell
       gsettings-desktop-schemas
       ollama
       python312Packages.material-color-utilities

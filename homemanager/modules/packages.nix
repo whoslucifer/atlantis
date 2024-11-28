@@ -19,7 +19,6 @@
       loupe
       vlc
       yad
-      blender
 
       # tools
       localsend
@@ -68,7 +67,6 @@
 
      #ddmp
       zoxide
-      yad
       file
       #toybox
       entr

@@ -61,6 +61,7 @@ in {
   ];
 
   nixpkgs.config.allowUnfree = true;
+  #nixpkgs.config.allowUnsupportedSystem = true;
 
   # System Users
   users = {

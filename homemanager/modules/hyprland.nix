@@ -51,7 +51,7 @@
         border_size = 1;
         layout = "dwindle";
         resize_on_border = true;
-        "col.active_border" = "rgba(471868FF)";
+        "col.active_border" = "rgba(4f4256CC)";
         "col.inactive_border" = "rgba(4f4256CC)";
       };
       dwindle = {
