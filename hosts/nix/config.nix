@@ -50,6 +50,7 @@ in {
     ../../modules/services.nix
     ../../modules/security.nix
     ../../modules/insecure.nix
+    ../../modules/stable/default.nix
 
     ../../modules/developer/developer.nix
     ../../modules/developer/mysql.nix
