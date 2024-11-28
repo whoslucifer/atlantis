@@ -22,6 +22,8 @@ in {
         "docker"
         "wireshark"
         "dialout"
+        "fingerprint"
+        "plugdev"
       ];
 
       # define user packages here
@@ -35,6 +37,8 @@ in {
       libvirtd = {};
       wireshark = {};
       dialout = {};
+      fingerprint = {};
+      plugdev = {};
     };
 
     defaultUserShell = pkgs.fish;

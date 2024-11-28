@@ -61,7 +61,22 @@
     torctl
     tor
     iptables
+    gparted
+
+        intel-media-driver
+        mesa
+        mesa-demos
+        vpl-gpu-rt
+        clinfo
+        ocl-icd
+        intel-compute-runtime
+        libvdpau-va-gl
+        libva
+			  libva-utils
+
   ];
+
+
   
   /*services.tor = {
     enable = true;

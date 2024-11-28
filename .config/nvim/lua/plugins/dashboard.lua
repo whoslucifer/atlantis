@@ -1,6 +1,6 @@
 return {
   {
-    "dashboard-nvim",
+    "glepnir/dashboard-nvim",
     opts = function(_, dashboard)
       local logo = table.concat({
         [[⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],

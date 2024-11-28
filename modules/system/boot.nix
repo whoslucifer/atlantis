@@ -1,23 +1,48 @@
 { lib, config, pkgs, ... }:
 {
+    services.xserver.videoDrivers = [ "modesetting" ];
+    hardware.cpu.intel.updateMicrocode = true;
+    hardware.enableRedistributableFirmware = true;
+
+    hardware.graphics = {
+      enable = true;
+      extraPackages = with pkgs; [
+        #intel-compute-runtime
+        intel-ocl
+        vaapiIntel
+        vaapiVdpau
+        libvdpau-va-gl
+        #intel-media-driver
+        mesa.opencl
+        mesa
+        libGL
+        libGLU
+
+      ];
+    };
+    
+    environment.systemPackages =  with pkgs; [
+      egl-wayland
+    ];
+
     boot = {
     kernelPackages = pkgs.linuxPackages_latest; # Kernel
 
-    kernelParams = [
+    /*kernelParams = [
       "systemd.mask=systemd-vconsole-setup.service"
       "systemd.mask=dev-tpmrm0.device" #this is to mask that stupid 1.5 mins systemd bug
       "nowatchdog" 
       "modprobe.blacklist=sp5100_tco" #watchdog for AMD
       "modprobe.blacklist=iTCO_wdt" #watchdog for Intel
- 	  ];
-
+ 	  ];*/
+    
     # This is for OBS Virtual Cam Support
-    kernelModules = [ "v4l2loopback" ];
+    kernelModules = [  "v4l2loopback" ];
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     
     initrd = { 
       availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
-      kernelModules = [ ];
+      kernelModules = [ "i915" ];
     };
 
     # Needed For Some Steam Games
@@ -58,11 +83,6 @@
   vm.guest-services.enable = false;
   local.hardware-clock.enable = false;
   
-  # OpenGL
-  hardware.graphics = {
-    enable = true;
-  };
-
 
 }
 

@@ -17,16 +17,10 @@ in
     # OpenGL
     hardware.graphics = {
       extraPackages = with pkgs; [
-        intel-media-driver
-        mesa
-        vpl-gpu-rt
-        clinfo
-        ocl-icd
-        intel-compute-runtime
-        libvdpau-va-gl
-        libva
-			  libva-utils
+
       ];
     };
+    
+        
   };
 }

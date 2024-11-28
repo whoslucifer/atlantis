@@ -33,14 +33,14 @@
 
     ngrok.url = "github:ngrok/ngrok-nix";
 
-    home-manager = {
+    home-manager = {      
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     ags = {
       url = "github:whoslucifer/ags?rev=05e0f23534fa30c1db2a142664ee8f71e38db260";
-      inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     more-waita = {
@@ -88,10 +88,11 @@
           inherit username;
           inherit host;
         };
+            
 
         modules = [
           ./hosts/nix/config.nix
-          
+	
           #nixos-hardware.nixosModules.lenovo-thinkpad-t460s
           inputs.distro-grub-themes.nixosModules.${system}.default
 

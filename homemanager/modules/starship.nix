@@ -31,7 +31,7 @@ in
         "$cmd_duration"
         "$status"
         "$line_break"
-        "[❯](bold purple)"
+        "[ ](bold purple)"
         ''''${custom.space}''
       ];
       custom.space = {

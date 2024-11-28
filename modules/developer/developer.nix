@@ -12,7 +12,9 @@
     openjdk17-bootstrap
 
     github-desktop
-
+    
+    ruby
+  
     android-tools
     vscode
     android-studio

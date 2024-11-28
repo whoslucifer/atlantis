@@ -15,6 +15,7 @@
     ps:
       with ps; [
         requests
+        ninja
         pyquery # needed for hyprland-dots Weather script
       ]
   );
@@ -22,7 +23,7 @@ in {
   imports = [
     ./hardware-configuration.nix
     ./users.nix
-    ../../modules/system/misc/intel-drivers.nix
+    #../../modules/system/misc/intel-drivers.nix
     #../../modules/system/gpu.nix
     #../../modules/system/default.nix
     #../../modules/system/cpu.nix
