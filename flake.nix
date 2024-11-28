@@ -40,7 +40,7 @@
 
     ags = {
       url = "github:whoslucifer/ags?rev=05e0f23534fa30c1db2a142664ee8f71e38db260";
-      #inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     more-waita = {
