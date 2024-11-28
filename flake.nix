@@ -72,7 +72,7 @@
       };
     };
 
-    homePkgs = import nixpkgs-stable {
+    pkgs-stable = import nixpkgs-stable {
       inherit system;
       config = {
 	      allowUnfree = true;
@@ -101,13 +101,19 @@
           # { programs.nix-index-database.comma.enable = true; }
 
           ngrok.nixosModules.ngrok
+
+          # Make pkgs-stable available as a special argument for modules
+          {
+            _module.args.pkgs-stable = pkgs-stable;
+          }
+
         ];
       };
     };
 
     homeConfigurations = {
       "${username}" = home-manager.lib.homeManagerConfiguration {
-        pkgs = homePkgs;
+        pkgs = pkgs-stable;
         extraSpecialArgs = {
           inherit inputs;
         };
