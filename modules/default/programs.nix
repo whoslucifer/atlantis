@@ -55,24 +55,11 @@
   #for ags
   environment.systemPackages = with pkgs; [
 
-    #sddm
-    libsForQt5.qt5.qtquickcontrols2
-    libsForQt5.qt5.qtgraphicaleffects
     torctl
     tor
     iptables
     gparted
 
-        intel-media-driver
-        mesa
-        mesa-demos
-        vpl-gpu-rt
-        clinfo
-        ocl-icd
-        intel-compute-runtime
-        libvdpau-va-gl
-        libva
-			  libva-utils
 
   ];
 

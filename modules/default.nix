@@ -1,33 +1,31 @@
 { ... }:
 {
   imports = [
-    #./system/misc/intel-drivers.nix
-    #./system/gpu.nix
-    #./system/default.nix
-    #./system/cpu.nix
-    #./system/misc/amd-drivers.nix
-    #./system/misc/nvidia-drivers.nix
-    #./system/misc/nvidia-prime-drivers.nix
-    ./system/misc/vm-guest-services.nix
-    ./system/misc/local-hardware-clock.nix
-
+    ./system/boot.nix
+    ./system/boot-loader.nix
+    ./system/sddm-deps.nix
+    #./system/laptop.nix
     ./system/locales.nix
     ./system/networking.nix
     ./system/hotspot.nix
-    ./system/boot.nix
-    ./system/boot-loader.nix
-    #./system/laptop.nix
+    
+    ./system/intel-drivers.nix
+    ./system/vm-guest-services.nix
+    ./system/local-hardware-clock.nix
 
-    ./programs.nix
-    ./virtualization.nix
-    ./extra.nix
-    ./sound.nix
-    ./spotify.nix
-    ./zen-browser.nix
-    #./thorium.nix
-    ./services.nix
-    ./security.nix
-    ./insecure.nix
+
+    ./default/programs.nix
+    ./default/packages.nix
+    ./default/virtualization.nix
+    ./default/extra.nix
+    ./default/sound.nix
+    ./default/spotify.nix
+    ./default/zen-browser.nix
+    ./default/services.nix
+    ./default/security.nix
+    ./default/insecure.nix
+    ./default/utils.nix  
+
     ./stable/default.nix
 
     ./developer/developer.nix
@@ -35,8 +33,6 @@
     ./developer/postgresql.nix
 
     ./pentester/default.nix
-
-    ./utils.nix
 
   ];
 }

@@ -19,7 +19,7 @@
     displayManager = {
         sessionPackages = [ pkgs.hyprland ];
         sddm.enable = true;
-        sddm.theme = "${import ./system/sddm.nix {inherit pkgs; }}";
+        sddm.theme = "${import ../system/sddm.nix {inherit pkgs; }}";
     };
     
     /*greetd = {
