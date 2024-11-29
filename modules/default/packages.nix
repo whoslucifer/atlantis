@@ -6,6 +6,8 @@
 }: {
 
   environment.systemPackages = with pkgs; [
+  
+    gparted
 
     blender
     google-chrome

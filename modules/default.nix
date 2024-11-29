@@ -16,6 +16,7 @@
 
     ./default/programs.nix
     ./default/packages.nix
+    ./default/tor.nix
     ./default/virtualization.nix
     ./default/extra.nix
     ./default/sound.nix
