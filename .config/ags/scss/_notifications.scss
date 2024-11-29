@@ -20,8 +20,8 @@
 
 .notif-critical {
     @include notif-rounding;
-    background-color: $secondaryContainer;
-    color: $onSecondaryContainer;
+    background-color: $layer2; // secondaryContainer
+    color: $onLayer2; // onSecondaryContainer
     padding: $rounding_small;
     padding-right: $rounding_small + 0.545rem;
 }
@@ -35,8 +35,8 @@
 }
 
 .notif-clicked-critical {
-    background-color: $onSecondary;
-    color: $onSecondaryContainer;
+    background-color: $layer1Hover; // onSecondary
+    color: $layer1Hover; // onSecondaryContainer
 }
 
 .popup-notif-low {
@@ -72,9 +72,9 @@
 .popup-notif-critical {
     @include notif-rounding;
     min-width: 30.682rem;
-    background-color: $secondaryContainer;
-    border: 0.034rem solid $onSecondaryContainer;
-    color: $onSecondaryContainer;
+    background-color: $layer2; // secondaryContainer
+    border: 0.034rem solid $outlineVariant ; // 0.034rem solid $onSecondaryContainer
+    color: $onLayer2;
     padding: $rounding_small;
     padding-right: $rounding_small + 0.545rem;
 }
@@ -88,8 +88,8 @@
 }
 
 .popup-notif-clicked-critical {
-    background-color: $onSecondary;
-    color: $onSecondaryContainer;
+    background-color: $surfaceContainerLow;
+    color: $surfaceContainerLow;
 }
 
 .notif-body-low {
@@ -101,7 +101,7 @@
 }
 
 .notif-body-critical {
-    color: mix($onSecondaryContainer, $secondaryContainer, 67%);
+    color: $outline;
 }
 
 .notif-icon {
@@ -127,8 +127,8 @@
 }
 
 .notif-icon-material-critical {
-    background-color: $secondary;
-    color: $onSecondary;
+    background-color: $secondaryContainer;
+    color: $onSecondaryContainer;
 }
 
 .notif-expand-btn {
