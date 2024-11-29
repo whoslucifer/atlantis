@@ -4,31 +4,8 @@
   ...
 }: {
   imports = [
-    #./homemanager/modules/terminals.nix
-    ./homemanager/modules/tmux.nix
-    ./homemanager/modules/neovim.nix
-    ./homemanager/modules/theme.nix
-    ./homemanager/modules/packages.nix
-    ./homemanager/modules/fzf.nix
-    #./homemanager/modules/git.nix
-    #./homemanager/modules/zoom.nix
-    ./homemanager/modules/ags.nix
-    #./homemanager/modules/sourceags.nix
-    ./homemanager/modules/hyprland.nix
-    #./homemanager/modules/stylix.nix
-    ./homemanager/modules/anyrun.nix
-    ./homemanager/modules/lazygit.nix
-    ./homemanager/modules/xdg.nix
+    ./hm-modules/default.nix
 
-    ./homemanager/modules/socials.nix
-    #./homemanager/modules/nautilus.nix
-    ./homemanager/modules/media.nix
-    ./homemanager/modules/productivity.nix
-    #./homemanager/modules/insecure.nix
-
-    ./homemanager/modules/developer/go.nix
-    ./homemanager/modules/starship.nix
-    #./homemanager/modules/browser.nix
   ];
 
   home.username = "asherah";
