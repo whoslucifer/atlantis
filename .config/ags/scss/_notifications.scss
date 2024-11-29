@@ -241,15 +241,15 @@
 }
 
 .notif-action-critical {
-    background-color: mix($secondary, $onSecondary, 30%);
-    color: $onSurfaceVariant;
+    background-color: $surfaceContainerHighest;
+    color: $onSurface;
 }
 
 .notif-action-critical:focus,
 .notif-action-critical:hover {
-    border: 0.040rem solid $outline;
+    border: 0.040rem solid $outlineVariant;
 }
 
 .notif-action-critical:active {
-    background-color: mix($secondary, $onSecondary, 40%);
+    background-color: $surfaceBright;
 }
