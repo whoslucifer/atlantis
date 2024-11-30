@@ -12,6 +12,7 @@
     btop
     htop
     git
+    nix-prefetch-git
     cpufrequtils
     glib #for gsettings to work
     gsettings-qt
