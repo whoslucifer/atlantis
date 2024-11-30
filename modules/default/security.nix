@@ -26,6 +26,8 @@
         auth include login
       '';
     };
+
+    # pam.services.swaylock-effects = {};
  
     # required by wireshark capture packets
     wrappers.dumpcap = {
