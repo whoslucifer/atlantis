@@ -19,7 +19,6 @@
 
 
   programs = {
-    hyprlock.enable = true;
     nm-applet.indicator = true;
 
     thunar.enable = true;

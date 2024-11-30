@@ -19,6 +19,7 @@
       loupe
       vlc
       yad
+      swaylock-effects
 
       # tools
       thunderbird

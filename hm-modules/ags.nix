@@ -13,14 +13,13 @@
     sassc
     material-symbols
     material-icons
-    hypridle
-    #hyprlock
     #blueberry
     gtksourceview
     gtksourceview4
     cloudflare-warp
     gsettings-desktop-schemas
     matugen
+    swayidle
     #materialyoucolor
     (python312.withPackages (p: [
       p.material-color-utilities
@@ -48,11 +47,10 @@
       pywal
       sassc
       webkitgtk
+      swayidle
       webp-pixbuf-loader
       ydotool
     ];
   };
-  
-  programs.hyprlock.enable = true;
 
 }

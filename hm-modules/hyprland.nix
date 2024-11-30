@@ -12,7 +12,15 @@
     categories = ["X-Preferences"];
     terminal = false;
   };
+  
+  programs = {
+    swaylock = {
+      enable = true;
+      package = pkgs.swaylock-effects;
+    };
+  };
 
+  
   wayland.windowManager.hyprland = {
     enable = true;
     #xwayland.enable = true; # crashes discord for some reason
@@ -39,7 +47,9 @@
         "swww kill; swww init"
         "nm-applet &"
         "fcitx5"
-        "hypridle"
+        ''
+          swayidle -w timeout 300 'bash -c $HOME/.config/hypr/swaylock/lockscreen' timeout 450 'pidof java || systemctl suspend' before-sleep 'bash -c $HOME/.config/hypr/swaylock/lockscreen'
+        ''
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "hyprctl setcursor Bibata-Modern-Classic 24"
