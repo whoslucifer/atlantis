@@ -1,5 +1,7 @@
 <details>
   <summary>Preview</summary>
+  
+  <br>
 
   ![PartialBlur](https://github.com/user-attachments/assets/44488e72-9489-4daa-9893-85506789d42c)
 
