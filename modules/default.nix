@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ./system/boot.nix
     ./system/boot-loader.nix
@@ -8,11 +7,11 @@
     ./system/locales.nix
     ./system/networking.nix
     ./system/hotspot.nix
-    
+
     ./system/intel-drivers.nix
     ./system/vm-guest-services.nix
     ./system/local-hardware-clock.nix
-  
+
     ./desktop/gnome.nix
 
     ./default/programs.nix
@@ -26,7 +25,8 @@
     ./default/services.nix
     ./default/security.nix
     ./default/insecure.nix
-    ./default/utils.nix  
+    ./default/utils.nix
+    ./default/thunar.nix
 
     ./stable/default.nix
 
@@ -35,6 +35,5 @@
     ./developer/postgresql.nix
 
     ./pentester/default.nix
-
   ];
 }
