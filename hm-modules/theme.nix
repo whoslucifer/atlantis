@@ -49,7 +49,7 @@ in {
       adw-gtk3
       #libsForQt5.breeze-icons
       #gnome-icon-theme
-      gnome.adwaita-icon-theme
+      adwaita-icon-theme
       #adwaita-icon-theme-legacy
       #hicolor-icon-theme
       #material-symbols
