@@ -196,7 +196,7 @@
         "Control+Alt, R, exec, ~/.config/ags/scripts/record-script.sh --fullscreen"
         "Super+Shift+Alt, R, exec, ~/.config/ags/scripts/record-script.sh --fullscreen-sound"
         "Super+Shift, C, exec, hyprpicker -a"
-        "Super, V, exec, pkill fuzzel || cliphist list | fuzzel --no-fuzzy --dmenu | cliphist decode | wl-copy"
+        "Super, V, exec, pkill fuzzel || cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
         ''
           Control+Super+Shift,S,exec,grim -g "${SLURP_COMMAND}" "tmp.png" && tesseract "tmp.png" - | wl-copy && rm "tmp.png"
         ''
