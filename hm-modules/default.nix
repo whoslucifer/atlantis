@@ -10,6 +10,8 @@
     ./fzf.nix
     ./starship.nix
 
+    ./default/obs-studio.nix
+
     #./stylix.nix
     ./xdg.nix
     ./theme.nix
