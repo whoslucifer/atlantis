@@ -12,7 +12,8 @@
     ./system/intel-drivers.nix
     ./system/vm-guest-services.nix
     ./system/local-hardware-clock.nix
-
+  
+    ./desktop/gnome.nix
 
     ./default/programs.nix
     ./default/packages.nix
