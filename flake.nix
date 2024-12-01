@@ -3,12 +3,12 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     hyprland = {
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
-    };   
+    };
 
     stylix.url = "github:danth/stylix";
 
@@ -16,15 +16,15 @@
       url = "github:hyprwm/hyprland-plugins";
       # inputs.nixpkgs.follows = "hyprland";
     };
-    
+
     #nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
-    zen-browser.url = "github:whoslucifer/zen-browser-flake";    
+
+    zen-browser.url = "github:whoslucifer/zen-browser-flake";
 
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
 
@@ -33,8 +33,8 @@
 
     ngrok.url = "github:ngrok/ngrok-nix";
 
-    home-manager = {      
-      url = "github:nix-community/home-manager/release-24.05";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
@@ -47,7 +47,6 @@
       url = "github:somepaulo/MoreWaita";
       flake = false;
     };
-
   };
 
   outputs = {
@@ -55,7 +54,9 @@
     nixpkgs,
     nixpkgs-stable,
     nix-index-database,
-    /*nixos-hardware,*/
+    /*
+    nixos-hardware,
+    */
     stylix,
     ngrok,
     home-manager,
@@ -75,10 +76,9 @@
     pkgs-stable = import nixpkgs-stable {
       inherit system;
       config = {
-	      allowUnfree = true;
+        allowUnfree = true;
       };
     };
-
   in {
     nixosConfigurations = {
       "${host}" = nixpkgs.lib.nixosSystem rec {
@@ -88,11 +88,10 @@
           inherit username;
           inherit host;
         };
-            
 
         modules = [
           ./hosts/nix/config.nix
-	
+
           #nixos-hardware.nixosModules.lenovo-thinkpad-t460s
           inputs.distro-grub-themes.nixosModules.${system}.default
 
@@ -106,7 +105,6 @@
           {
             _module.args.pkgs-stable = pkgs-stable;
           }
-
         ];
       };
     };
