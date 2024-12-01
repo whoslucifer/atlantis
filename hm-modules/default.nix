@@ -3,7 +3,6 @@
     ./ags.nix
     ./anyrun.nix
     ./hyprland.nix
-    ./thunar.nix
 
     ./tmux.nix
     #./wezterm.nix
