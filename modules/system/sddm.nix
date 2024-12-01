@@ -13,13 +13,13 @@ pkgs.stdenv.mkDerivation {
   src = pkgs.fetchFromGitHub {
     owner = "whoslucifer";
     repo = "SDDM-NIX";
-    rev = "29f7eae254a312b656e9c18c3d1485c30b6edf40";
-    sha256 = "1rwl7ka6y1hl5yc7xcjarb6lwhjb2n2fnd0lqjiqqfdamszmcaws";
+    rev = "9365be88ff1a2dbe5532561086f22b00614ecb9a";
+    sha256 = "1sa4hrhv0isq24a60c150ih3drkf1hs4yjxm4mbanafrfvfn77a3";
   };
   installPhase = ''
     mkdir -p $out
     cp -R ./* $out/
-    cd $out/
+    #cd $out/
     #rm background.jpg
     #rm README.md
     #cp -r #$#{#image} $out/background.jpg
