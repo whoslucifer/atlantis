@@ -17,8 +17,6 @@
       # inputs.nixpkgs.follows = "hyprland";
     };
 
-    #nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -54,9 +52,6 @@
     nixpkgs,
     nixpkgs-stable,
     nix-index-database,
-    /*
-    nixos-hardware,
-    */
     stylix,
     ngrok,
     home-manager,
@@ -92,7 +87,6 @@
         modules = [
           ./hosts/nix/config.nix
 
-          #nixos-hardware.nixosModules.lenovo-thinkpad-t460s
           inputs.distro-grub-themes.nixosModules.${system}.default
 
           nix-index-database.nixosModules.nix-index
