@@ -8,5 +8,6 @@
 
 ![image](https://github.com/user-attachments/assets/9f217a42-403b-4fc5-9a80-b047197a5128)
 
-
-
+### Special Thanks
+@end-4 - ags dotfiles
+@Machillka - sddm theme
