@@ -3,16 +3,15 @@
   pkgs,
   ...
 }: {
-
   xdg.desktopEntries."org.gnome.Settings" = {
     name = "Settings";
     comment = "Gnome Control Center";
     icon = "org.gnome.Settings";
-    exec = "env XDG_CURRENT_DESKTOP=gnome ${pkgs.gnome.gnome-control-center}/bin/gnome-control-center";
+    exec = "env XDG_CURRENT_DESKTOP=gnome ${pkgs.gnome-control-center}/bin/gnome-control-center";
     categories = ["X-Preferences"];
     terminal = false;
   };
-  
+
   programs = {
     swaylock = {
       enable = true;
@@ -20,7 +19,6 @@
     };
   };
 
-  
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = false; # crashes discord for some reason
@@ -30,7 +28,7 @@
       # inputs.hyprland-hyprspace.packages.${pkgs.system}.default
       # inputs.hyprgrass.packages.${pkgs.system}.default
     ];
-    
+
     settings = {
       env = [
         "GTK_IM_MODULE, fcitx"
@@ -369,6 +367,6 @@
       source = [
         "./colors.conf"
       ];
-    };  
+    };
   };
 }
