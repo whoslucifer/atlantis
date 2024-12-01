@@ -1,16 +1,16 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ./ags.nix
     ./anyrun.nix
     ./hyprland.nix
+    ./thunar.nix
 
     ./tmux.nix
     #./wezterm.nix
     ./neovim.nix
     ./fzf.nix
     ./starship.nix
-  
+
     #./stylix.nix
     ./xdg.nix
     ./theme.nix
@@ -27,8 +27,5 @@
     ./packages.nix
     #./insecure.nix
     ./developer/go.nix
-
-    
-
   ];
 }
