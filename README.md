@@ -10,6 +10,6 @@
 
 ### Credits
 
-- [@end-4](https://github.com/end-4) AGS dotfiles.
+- [@end-4](https://github.com/end-4) AGS dotfiles
 - [@Machillka](https://github.com/Machillka) SDDM theme
 
