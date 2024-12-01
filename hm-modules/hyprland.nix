@@ -23,7 +23,7 @@
   
   wayland.windowManager.hyprland = {
     enable = true;
-    #xwayland.enable = true; # crashes discord for some reason
+    xwayland.enable = false; # crashes discord for some reason
     package = inputs.hyprland.packages.${pkgs.system}.default;
 
     plugins = [
@@ -36,7 +36,7 @@
         "GTK_IM_MODULE, fcitx"
         "QT_IM_MODULE, fcitx"
         "XMODIFIERS, @im=fcitx"
-        "QT_QPA_PLATFORM, wayland;xcb"
+        "QT_QPA_PLATFORM, wayland"
         "QT_QPA_PLATFORMTHEME, qt5ct"
         #"QT_STYLE_OVERRIDE,kvantum"
         "WLR_NO_HARDWARE_CURSORS, 1"
