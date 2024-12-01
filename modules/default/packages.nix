@@ -9,6 +9,7 @@
   
     gparted
 
+    wezterm
     blender
     google-chrome
     teams-for-linux
