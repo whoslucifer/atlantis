@@ -39,7 +39,7 @@
     #  dedicatedServer.openFirewall = true;
     #};
 
-    xwayland.enable = true;
+    #xwayland.enable = true;
     
     dconf.enable = true;
     seahorse.enable = true;
