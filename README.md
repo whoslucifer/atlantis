@@ -8,8 +8,7 @@
 </div>
 
 > [!WARNING]
-> - Am still new to Nixos
-> - Nothing is stable...everything is subject to change
+> - nothing is stable
 
 <details>
   <summary>Preview</summary>
