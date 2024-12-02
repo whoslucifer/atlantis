@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ...}: {
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   home = {
     packages = with pkgs;
     with nodePackages_latest;
@@ -11,6 +16,7 @@
       kolourpaint
       #github-desktop
       nautilus
+      yazi
       icon-library
       dconf-editor
       qt5.qtimageformats
@@ -64,7 +70,7 @@
       vscode
       ydotool
 
-     #ddmp
+      #ddmp
       zoxide
       file
       #toybox
@@ -91,7 +97,6 @@
       wlsunset
       wl-clipboard
       wf-recorder
-      
 
       # langs
       gjs
@@ -108,6 +113,5 @@
       sass
       unixtools.top
     ];
-    
-      };
+  };
 }
