@@ -17,8 +17,19 @@ if test -f ~/.cache/ags/user/generated/terminal/sequences.txt
     cat ~/.cache/ags/user/generated/terminal/sequences.txt
 end
 
-alias pamcan=pacman
+zoxide init --cmd cd fish | source
 
+function delgen
+    sudo nix-env --profile /nix/var/nix/profiles/system/ --delete-generations
+end
+
+function lsgen
+    sudo nix-env --list-generations --profile /nix/var/nix/profiles/system/
+end
+
+#set -Ux MSF_DATABASE_CONFIG /home/asherah/.msf4/database.yml
+
+set -Ux fish_user_paths /home/asherah/go/bin $fish_user_paths
 # function fish_prompt
 #   set_color cyan; echo (pwd)
 #   set_color green; echo '> '
