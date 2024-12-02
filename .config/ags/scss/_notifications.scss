@@ -20,8 +20,8 @@
 
 .notif-critical {
     @include notif-rounding;
-    background-color: $layer2; // secondaryContainer
-    color: $onLayer2; // onSecondaryContainer
+    background-color: $layer2;
+    color: $onLayer2;
     padding: $rounding_small;
     padding-right: $rounding_small + 0.545rem;
 }
@@ -35,8 +35,8 @@
 }
 
 .notif-clicked-critical {
-    background-color: $layer1Hover; // onSecondary
-    color: $layer1Hover; // onSecondaryContainer
+    background-color: $layer1Hover;
+    color: $layer1Hover;
 }
 
 .popup-notif-low {
@@ -72,8 +72,13 @@
 .popup-notif-critical {
     @include notif-rounding;
     min-width: 30.682rem;
-    background-color: $layer2; // secondaryContainer
-    border: 0.034rem solid $outlineVariant ; // 0.034rem solid $onSecondaryContainer
+    background-color: $layer2;
+
+    @if $transparent == True {
+        background-color: $layer0;
+    }
+
+    border: 0.034rem solid $outlineVariant ;
     color: $onLayer2;
     padding: $rounding_small;
     padding-right: $rounding_small + 0.545rem;
@@ -242,7 +247,7 @@
 
 .notif-action-critical {
     background-color: $surfaceContainerHighest;
-    color: $onSurface;
+    color: $onLayer2;
 }
 
 .notif-action-critical:focus,
