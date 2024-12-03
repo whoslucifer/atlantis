@@ -33,21 +33,13 @@
       audacity
       switcheroo # converts image types
       celeste #connect and sync cloud drives to you pc
-      syncthing # sync your files on devices on the same network
       handbrake #video format converter
       impression #rufus alternative
-      ventoy #installs onto a flashdrive and allows storing more that 1 bootable iso on it
-      hypnotix # iptv streaming application
-      #qt5.spectacle #screenshot service that allows annotations
-      #qt5.kdeconnect-kde
       easyeffects
       upscayl #offline image upscaler
       textpieces #text encoder and decoder
-      onionshare-gui
-      #onionshare # share files over tor and host a website on the tor network
       mousai # shazam alternative
       stirling-pdf # best pdf actions tool
-      piper # reassign mouse buttons
       gimp
       bat
       eza
@@ -73,7 +65,6 @@
       #ddmp
       zoxide
       file
-      #toybox
       entr
 
       # theming tools
