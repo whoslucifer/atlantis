@@ -9,12 +9,13 @@
     go
     gcc
 
-    openjdk17-bootstrap
+    jdk23
+    openjdk23
 
     github-desktop
-    
+
     ruby
-  
+
     android-tools
     vscode
     android-studio
