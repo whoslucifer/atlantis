@@ -8,7 +8,7 @@
 </div>
 
 > [!WARNING]
-> - unstable
+> - unstable: everything is subject to change
 
 <details>
   <summary>Preview</summary>
