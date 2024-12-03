@@ -14,6 +14,8 @@
 
     ./desktop/gnome.nix
 
+    #./custom/burpsuitepro.nix
+
     ./default/programs.nix
     ./default/packages.nix
     ./default/tor.nix
