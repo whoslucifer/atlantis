@@ -12,8 +12,6 @@
     jdk23
     openjdk23
 
-    github-desktop
-
     ruby
 
     android-tools
