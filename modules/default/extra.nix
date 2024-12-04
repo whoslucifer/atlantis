@@ -3,7 +3,6 @@
   pkgs,
   ...
 }: {
-
   vm.guest-services.enable = false;
   local.hardware-clock.enable = false;
 
@@ -18,16 +17,6 @@
       pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal
     ];
-  };
-
-
-  # zram
-  zramSwap = {
-    enable = true;
-    priority = 100;
-    memoryPercent = 30;
-    swapDevices = 1;
-    algorithm = "zstd";
   };
 
   powerManagement = {

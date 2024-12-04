@@ -29,6 +29,7 @@
     ./default/insecure.nix
     ./default/utils.nix
     ./default/thunar.nix
+    ./default/zram.nix
 
     ./stable/default.nix
 
