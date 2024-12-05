@@ -35,7 +35,7 @@ const centerWidgets = [
     },
     {
         name: getString('Audio Controls'),
-        materialIcon: 'graphic_eq',
+        materialIcon: 'volume_up',
         contentWidget: ModuleAudioControls,
     },
     {
@@ -45,13 +45,13 @@ const centerWidgets = [
     },
     {
         name: getString('WIFI'),
-        materialIcon: 'signal_cellular_alt',
+        materialIcon: 'wifi',
         contentWidget: ModuleWifiNetworks,
         onFocus: () => execAsync('nmcli dev wifi list').catch(print),
     },
     {
         name: getString('Tune Config'),
-        materialIcon: 'discover_tune',
+        materialIcon: 'tune',
         contentWidget: ModuleConfigure,
     },
 ];
