@@ -27,6 +27,8 @@ function lsgen
     sudo nix-env --list-generations --profile /nix/var/nix/profiles/system/
 end
 
+alias cat=bat
+
 #set -Ux MSF_DATABASE_CONFIG /home/asherah/.msf4/database.yml
 
 set -Ux fish_user_paths /home/asherah/go/bin $fish_user_paths
