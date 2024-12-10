@@ -30,7 +30,9 @@
       thunderbird
       metadata-cleaner
       onlyoffice-bin
+      libreoffice-fresh
       audacity
+      spotdl
       switcheroo # converts image types
       celeste #connect and sync cloud drives to you pc
       handbrake #video format converter
