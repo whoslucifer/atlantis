@@ -22,8 +22,7 @@
 in {
   imports = [
     ./default.nix
-    ../../modules/default.nix  
-  
+    ../../modules/default.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
