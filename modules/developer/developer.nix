@@ -13,6 +13,8 @@
     openjdk23
     openjdk17
 
+    uv
+
     ruby
 
     android-tools
