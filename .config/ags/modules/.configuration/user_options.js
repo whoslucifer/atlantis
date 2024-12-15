@@ -139,7 +139,7 @@ let configOptions = {
         'dateFormat': "%d/%m", // On notif time
     },
     'weather': {
-        'city': "",
+        'city': "Kithimani",
         'preferredUnit': "C", // Either C or F
     },
     'workspaces': {
