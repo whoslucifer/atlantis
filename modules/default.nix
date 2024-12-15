@@ -33,6 +33,7 @@
 
     ./stable/default.nix
 
+    ./default/nix-ld.nix
     ./developer/developer.nix
     ./developer/mysql.nix
     ./developer/postgresql.nix
