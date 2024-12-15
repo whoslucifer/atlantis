@@ -34,9 +34,9 @@
     };
 
     firewall = {
-      enable = false;
-      allowedTCPPorts = [ ];
-      allowedUDPPorts = [ ];
+      enable = true;
+      allowedTCPPorts = [];
+      allowedUDPPorts = [];
     };
 
     nat = {
