@@ -11,6 +11,7 @@
 
     jdk23
     openjdk23
+    openjdk17
 
     ruby
 
