@@ -33,6 +33,7 @@
       libreoffice-fresh
       audacity
       spotdl
+      delta
       switcheroo # converts image types
       celeste #connect and sync cloud drives to you pc
       handbrake #video format converter
