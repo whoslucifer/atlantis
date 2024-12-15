@@ -51,6 +51,33 @@ const getFriendlyNotifTimeString = (timeObject) => {
 const NotificationIcon = (notifObject) => {
 
     // { appEntry, appIcon, image }, urgency = 'normal'
+  
+    /*const persistentDir = `${GLib.get_home_dir()}/.cache/ags/notifications/chromium`;
+    if (!GLib.file_test(persistentDir, GLib.FileTest.EXISTS)) {
+        GLib.mkdir_with_parents(persistentDir, 0o755);
+    }
+
+    if (notifObject.hints?.image_path?.deepUnpack) {
+        const tempPath = notifObject.hints.image_path.deepUnpack();
+        const iconFileName = GLib.path_get_basename(tempPath);
+        Utils.execAsync([`bash`, `-c`, `cp ${tempPath} ${persistentDir}/${iconFileName}`])
+
+        const imagePath = `${persistentDir}/${iconFileName}`;
+
+        return Box({
+            valign: Gtk.Align.CENTER,
+            hexpand: false,
+            className: 'notif-icon',
+            css: `
+                background-image: url("${imagePath}");
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            `,
+        });
+
+    }*/
+
     if(notifObject.hints?.image_path?.deepUnpack) {
         const imagePath = notifObject.hints.image_path.deepUnpack();
         return Box({
