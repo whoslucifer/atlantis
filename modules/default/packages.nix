@@ -12,7 +12,8 @@
     google-chrome
     teams-for-linux
     localsend
-    plasma5Packages.kdeconnect-kde
+    #plasma5Packages.kdeconnect-kde
+    kdePackages.kdeconnect-kde
 
     #for ags new
     cloudflare-warp
