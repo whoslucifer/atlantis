@@ -110,21 +110,12 @@ export default (props) => {
             ]
         })
     });
-    const footNote = Box({
-        homogeneous: true,
-        children: [Label({
-            hpack: 'center',
-            className: 'txt txt-italic txt-subtext margin-5',
-            label: getString('Not all changes are saved'),
-        })]
-    })
     return Box({
         ...props,
         className: 'spacing-v-5',
         vertical: true,
         children: [
             mainContent,
-            footNote,
         ]
     });
 }
