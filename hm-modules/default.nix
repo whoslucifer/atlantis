@@ -4,8 +4,9 @@
     ./anyrun.nix
     ./hyprland.nix
 
+    ./shell.nix
     ./tmux.nix
-    #./wezterm.nix
+    ./wezterm.nix
     ./neovim.nix
     ./fzf.nix
     ./starship.nix
