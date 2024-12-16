@@ -25,7 +25,6 @@
     ./lazygit.nix
     #./browser.nix
 
-    #./terminals.nix
     ./packages.nix
     #./insecure.nix
     ./developer/go.nix
