@@ -21,7 +21,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    xwayland.enable = false; # crashes discord for some reason
+    xwayland.enable = true; # crashes discord for some reason
     package = inputs.hyprland.packages.${pkgs.system}.default;
 
     plugins = [
@@ -154,7 +154,7 @@
         animate_manual_resizes = false;
         animate_mouse_windowdragging = false;
         enable_swallow = false;
-        swallow_regex = "(foot|kitty|allacritty|Alacritty)";
+        swallow_regex = "(foot|kitty|allacritty|Alacritty|wezterm)";
 
         disable_hyprland_logo = true;
         new_window_takes_over_fullscreen = 2;
@@ -172,6 +172,7 @@
         "Alt, C, exec, google-chrome-stable --app='https://chatgpt.com'"
         "Alt, G, exec, google-chrome-stable --app='https://gemini.google.com/app'"
         "Super, Tab, exec, foot --override shell=fish"
+        "Alt, Tab, exec, wezterm"
         "Super, E, exec, nautilus --new-window"
         "Super+Alt, E, exec, thunar"
         "Control+Super, W, exec, thorium-browser --ozone-platform-hint=wayland --gtk-version=4 --ignore-gpu-blocklist --enable-features=TouchpadOverscrollHistoryNavigation"
