@@ -1,4 +1,11 @@
 #!/usr/bin/env python
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "pywayland",
+#     "setproctitle",
+# ]
+# ///
 
 import sys
 from dataclasses import dataclass
