@@ -8,6 +8,7 @@
     gparted
 
     wezterm
+    xwayland
     blender
     google-chrome
     teams-for-linux
