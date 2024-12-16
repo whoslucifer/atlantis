@@ -26,6 +26,13 @@
       yad
       swaylock-effects
 
+      ifuse
+      libimobiledevice
+      usbmuxd
+
+      protonvpn-gui
+      fastfetch
+
       # tools
       thunderbird
       metadata-cleaner
