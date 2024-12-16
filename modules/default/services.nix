@@ -4,25 +4,25 @@
   username,
   ...
 }: {
-  
   # services to start
   services = {
     xserver = {
-      enable = true;
+      enable = false;
       #videoDrivers = ["intel"];
       xkb = {
         layout = "us";
         variant = "";
       };
     };
-    
+
     displayManager = {
-        sessionPackages = [ pkgs.hyprland ];
-        sddm.enable = true;
-        sddm.theme = "${import ../system/sddm.nix {inherit pkgs; }}";
+      sessionPackages = [pkgs.hyprland];
+      sddm.enable = false;
+      sddm.theme = "${import ../system/sddm.nix {inherit pkgs;}}";
     };
-    
-    /*greetd = {
+
+    /*
+      greetd = {
       enable = true;
       vt = 3;
       settings = {
@@ -31,7 +31,8 @@
           command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland"; # start Hyprland with a TUI login manager
         };
       };
-    };*/
+    };
+    */
 
     smartd = {
       enable = false;
@@ -58,13 +59,14 @@
     openssh.enable = false;
 
     flatpak.enable = true;
-    /*systemd.services.flatpak-repo = {
+    /*
+      systemd.services.flatpak-repo = {
       path = [ pkgs.flatpak ];
       script = ''
         flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
       '';
-    };*/
-
+    };
+    */
 
     #hardware.openrgb.enable = true;
     #hardware.openrgb.motherboard = "amd";
