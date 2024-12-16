@@ -25,10 +25,6 @@ in {
         "fingerprint"
         "plugdev"
       ];
-
-      # define user packages here
-      packages = with pkgs; [
-      ];
     };
 
     # create groups that arent created
@@ -41,11 +37,13 @@ in {
       plugdev = {};
     };
 
-    defaultUserShell = pkgs.fish;
+    defaultUserShell = pkgs.nushell;
   };
 
   programs.fish.enable = true;
 
-  environment.shells = with pkgs; [fish];
-  #environment.systemPackages = with pkgs; [fzf];
+  environment.shells = with pkgs; [
+    fish
+    nushell
+  ];
 }
