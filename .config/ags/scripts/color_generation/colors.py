@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "material-color-utilities-python",
+# ]
+# ///
 from material_color_utilities_python import *
 from pathlib import Path
 import sys
