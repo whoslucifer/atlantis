@@ -57,6 +57,7 @@
       ripgrep
       #fzf
       socat
+      tlrc
       jq
       gojq
       acpi
