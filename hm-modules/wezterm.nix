@@ -67,10 +67,10 @@
       hide_tab_bar_if_only_one_tab = true;
 
       window_padding = {
-        top = "2cell";
-        right = "2cell";
-        bottom = "2cell";
-        left = "2cell";
+        top = "0cell";
+        right = "1cell";
+        bottom = "0.5cell";
+        left = "1cell";
       };
 
       inactive_pane_hsb = {
