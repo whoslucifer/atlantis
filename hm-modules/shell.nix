@@ -25,6 +25,7 @@
     "gc" = "git commit";
     "ga" = "git add";
     "gp" = "git push";
+    "gpm" = "git push -u origin main";
     "gr" = "git reset --soft HEAD~1";
 
     "del" = "gio trash";
