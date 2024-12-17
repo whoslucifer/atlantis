@@ -9,6 +9,8 @@
     "tree" = "eza --tree";
     "v" = "nvim";
     "cat" = "bat";
+    "ns" = "sudo nixos-rebuild switch --flake .#nix";
+    "hs" = "home-manager switch -b backup --flake .#asherah";
 
     "la" = "ls -la";
     "l" = "ls";
