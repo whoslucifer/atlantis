@@ -18,6 +18,7 @@
     "q" = "exit";
 
     "gs" = "git status";
+    "gd" = "git diff";
     "gb" = "git branch";
     "gch" = "git checkout";
     "gc" = "git commit";
@@ -98,6 +99,40 @@ in {
             };
           }
         ];
+
+        keybindings = [
+          {
+            name = "fuzzy_history";
+            modifier = "control";
+            keycode = "char_r";
+            mode = ["emacs" "vi_normal" "vi_insert"];
+            event = [
+              {
+                send = "ExecuteHostCommand";
+                cmd = "do {
+                  $env.SHELL = '/usr/bin/bash'
+                  commandline edit --insert (
+                    history
+                    | get command
+                    | reverse
+                    | uniq
+                    | str join (char -i 0)
+                    | fzf --scheme=history 
+                    --read0
+                    --layout=reverse
+                    --height=40%
+                    --bind 'ctrl-/:change-preview-window(right,70%|right)'
+                    --preview='echo -n {} | nu --stdin -c \'nu-highlight\''
+                    # Run without existing commandline query for now to test composability
+                    # -q (commandline)
+                    | decode utf-8
+                    | str trim
+                  )
+                }";
+              }
+            ];
+          }
+        ];
       };
       completions = let
         completion = name: ''
@@ -111,24 +146,6 @@ in {
     in ''
       $env.config = ${conf};
       ${completions ["cargo" "git" "nix" "npm" "poetry" "curl"]}
-
-      keybindings: [
-        {
-          name: fuzzy_history
-          modifier: control
-          keycode: char_r
-          mode: [emacs, vi_normal, vi_insert]
-          event: [
-            {
-              send: ExecuteHostCommand
-              cmd: "do {
-                $env.SHELL = /usr/bin/bash
-                commandline edit --insert (history | get command | reverse | uniq | str join (char -i 0) | fzf --preview '{}' --preview-window 'right:30%' --scheme history --read0 --layout reverse --height 40% --query (commandline) | decode utf-8 | str trim)
-              }"
-            }
-          ]
-        }
-      ]
 
       zoxide init --cmd cd nushell | save -f ~/.zoxide.nu
 
