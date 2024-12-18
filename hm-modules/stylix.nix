@@ -10,75 +10,92 @@ let
       sed -i '/^Inherits=/ s/$/,breeze,hicolor,gnome/' $out/share/icons/index.theme || echo 'Inherits=breeze,hicolor,gnome' >> $out/share/icons/index.theme
     '';
   };
+  nerdfonts = pkgs.nerdfonts.override {
+    fonts = [
+      "Ubuntu"
+      "UbuntuMono"
+      "CascadiaCode"
+      "FantasqueSansMono"
+      "JetBrainsMono"
+      "FiraCode"
+      "Mononoki"
+      "SpaceMono"
+    ];
+  };
+  google-fonts = pkgs.google-fonts.override {
+    fonts = [
+      # Sans
+      "Gabarito"
+      "Lexend"
+      # Serif
+      "Chakra Petch"
+      "Crimson Text"
+    ];
+  };
 
 in
 
 {
 
-  stylix.enable = true;
-
-    
-
-  #stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-  
-  stylix.base16Scheme = {
-    base00 = "282828";
-    base01 = "3c3836";
-    base02 = "504945";
-    base03 = "665c54";
-    base04 = "bdae93";
-    base05 = "d5c4a1";
-    base06 = "ebdbb2";
-    base07 = "fbf1c7";
-    base08 = "fb4934";
-    base09 = "fe8019";
-    base0A = "fabd2f";
-    base0B = "b8bb26";
-    base0C = "8ec07c";
-    base0D = "83a598";
-    base0E = "d3869b";
-    base0F = "d65d0e";
-  };
-  
-  stylix.cursor.package = pkgs.bibata-cursors;
-  stylix.cursor.name = "Bibata-Modern-Ice";
-  
-  stylix.fonts.packages = {
-    pkgs.google-fonts.override {fonts = ["Rubik"];};
-    pkgs.material-symbols;
-  };
-
-  stylix.fonts = {
-    monospace = {
-      package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
-      name = "JetBrainsMono Nerd Font Mono";
+  stylix = {
+    enable = true;
+    image = ../../config/wallpapers/beautifulmountainscape.jpg;
+    base16Scheme = {
+       base00 = "232136";
+       base01 = "2a273f";
+       base02 = "393552";
+       base03 = "6e6a86";
+       base04 = "908caa";
+       base05 = "e0def4";
+       base06 = "e0def4";
+       base07 = "56526e";
+       base08 = "eb6f92";
+       base09 = "f6c177";
+       base0A = "ea9a97";
+       base0B = "3e8fb0";
+       base0C = "9ccfd8";
+       base0D = "c4a7e7";
+       base0E = "f6c177";
+       base0F = "56526e";
     };
-    sansSerif = {
-      package = pkgs.dejavu_fonts;
-      name = "DejaVu Sans";
-    };
-    serif = {
-      package = pkgs.dejavu_fonts;
-      name = "DejaVu Serif";
-    };
-  };
+    polarity = "dark";
+    opacity.terminal = 0.8;
+    cursor.package = pkgs.bibata-cursors;
+    cursor.name = "Bibata-Modern-Ice";
+    cursor.size = 24;
+    fonts = {
+      monospace = {
+        package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+        name = "JetBrainsMono Nerd Font Mono";
+      };
+      sansSerif = {
+        package = pkgs.montserrat;
+        name = "Montserrat";
+      };
+      serif = {
+        package = pkgs.montserrat;
+        name = "Montserrat";
+      };
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
+      };
+      sizes = {
+        applications = 12;
+        terminal = 15;
+        desktop = 11;
+        popups = 12;
+      };
 
-  stylix.fonts.sizes = {
-    applications = 12;
-    terminal = 15;
-    desktop = 10;
-    popups = 10;
-  };
 
-  stylix.opacity = {
-    applications = 1.0;
-    terminal = 1.0;
-    desktop = 1.0;
-    popups = 1.0;
+    };
+
+  home = {
+    packages = with pkgs; [
+      google-fonts;
+        
+    ];
   };
-  
-  stylix.polarity = "dark";
-  
-  stylix.image = ../../.config/wallpapers/Manga-Portal.png;
+  };
 
 }
