@@ -55,6 +55,7 @@ in {
       #material-symbols
       nerdfonts
       noto-fonts
+      noto-fonts-emoji
       noto-fonts-cjk-sans
       google-fonts
       moreWaita
@@ -128,9 +129,9 @@ in {
   qt = {
     enable = true;
     style = {
-          name = "adwaita-qt";
-          package = pkgs.adwaita-qt;
-      };
+      name = "adwaita-qt";
+      package = pkgs.adwaita-qt;
+    };
     platformTheme.name = "gtk";
   };
 }
