@@ -16,10 +16,13 @@
     #plasma5Packages.kdeconnect-kde
     kdePackages.kdeconnect-kde
 
+    pkgconf
+    pkg-config
+    dbus-glib
+
     #for ags new
     cloudflare-warp
     cloudflared
-    #nerdfonts
     pinokio #installs ai tools locally
   ];
 }
