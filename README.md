@@ -7,7 +7,7 @@
 
 </div>
 
-> [!WARNING]
+> [!NOTE]
 > - unstable ... everything is subject to change
 
 <details>
