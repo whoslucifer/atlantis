@@ -44,7 +44,7 @@
 in {
   stylix = {
     enable = true;
-    image = ../.config/wallpapers/Manga-Portal.png;
+    #image = ../.config/wallpapers/Manga-Portal.png;
     base16Scheme = {
       base00 = "232136";
       base01 = "2a273f";
