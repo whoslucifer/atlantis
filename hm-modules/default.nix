@@ -12,11 +12,12 @@
     ./starship.nix
 
     ./default/obs-studio.nix
+    ./virtualization/distrobox.nix
 
     #./stylix.nix
     ./xdg.nix
-    #./theme.nix
-    ./stylixnew.nix
+    ./theme.nix
+    #./stylixnew.nix
     #./git.nix
     #./zoom.nix
     ./media.nix
