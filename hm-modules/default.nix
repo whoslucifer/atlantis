@@ -15,7 +15,8 @@
 
     #./stylix.nix
     ./xdg.nix
-    ./theme.nix
+    #./theme.nix
+    ./stylixnew.nix
     #./git.nix
     #./zoom.nix
     ./media.nix
