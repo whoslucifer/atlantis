@@ -17,6 +17,7 @@
 
     ":q" = "exit";
     "q" = "exit";
+    "x" = "clear";
 
     "gs" = "git status";
     "gd" = "git diff";
@@ -31,6 +32,12 @@
     "del" = "gio trash";
     "dev" = "nix develop -c nvim";
   };
+
+  completionDir = pkgs.bash-completion + "/etc/bash_completion.d";
+
+  completionScripts = builtins.attrNames (builtins.readDir completionDir);
+
+  completionSource = builtins.foldl' (prev: script: "${prev}\nsource ${completionDir}/${script}") "" completionScripts;
 in {
   options.shellAliases = with lib;
     mkOption {
@@ -43,6 +50,7 @@ in {
     enable = true;
     initExtra = "
       SHELL=${pkgs.bash}
+      ${completionSource}
     ";
   };
 
