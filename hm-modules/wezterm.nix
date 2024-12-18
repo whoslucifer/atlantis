@@ -48,14 +48,14 @@
     package = inputs.wezterm.packages.${pkgs.system}.default;
     alias = ["xterm"];
 
-    font = "CaskaydiaCove NF";
+    font = "SpaceMono Nerd Font";
 
     themes = {
       Dark = "Charmful Dark";
     };
 
     settings = {
-      enable_wayland = false;
+      enable_wayland = true;
       color_schemes = {
         "Charmful Dark" = charmful-dark;
       };
@@ -69,7 +69,7 @@
       window_padding = {
         top = "0cell";
         right = "1cell";
-        bottom = "0.5cell";
+        bottom = "0.4cell";
         left = "1cell";
       };
 
@@ -78,7 +78,7 @@
         brightness = 0.8;
       };
 
-      window_background_opacity = 1.0;
+      window_background_opacity = 0.7;
       text_background_opacity = 1.0;
 
       audible_bell = "Disabled";
