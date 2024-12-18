@@ -17,6 +17,7 @@ const BarBatteryProgress = () => {
         circprog.css = `font-size: ${Math.abs(Battery.percent)}px;`
 
         circprog.toggleClassName('bar-batt-circprog-low', Battery.percent <= userOptions.battery.low);
+        circprog.toggleClassName('bar-batt-circprog-sufficient', Battery.percent >= userOptions.battery.sufficient);
         circprog.toggleClassName('bar-batt-circprog-full', Battery.charged);
     }
     return AnimatedCircProg({
@@ -120,6 +121,7 @@ const BarBattery = () => Box({
                 ],
                 setup: (self) => self.hook(Battery, box => {
                     box.toggleClassName('bar-batt-low', Battery.percent <= userOptions.battery.low);
+                    box.toggleClassName('bar-batt-sufficient', Battery.percent >= userOptions.battery.sufficient);
                     box.toggleClassName('bar-batt-full', Battery.charged);
                 }),
             }),

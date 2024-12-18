@@ -171,6 +171,11 @@ $bar_ws_width_focus_active: 2.045rem;
     color: $battOnLayer2;
 }
 
+.bar-batt-circprog-sufficient {
+    background-color: $battLayer2;
+    color: $workspaceLayer3;
+}
+
 .bar-batt-circprog-low {
     background-color: $error;
     color: $errorContainer;
