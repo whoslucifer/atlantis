@@ -6,6 +6,7 @@
 }: {
   environment.systemPackages = with pkgs; [
     clang
+    cmake
     go
     gcc
 
