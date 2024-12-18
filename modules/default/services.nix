@@ -21,8 +21,7 @@
       sddm.theme = "${import ../system/sddm.nix {inherit pkgs;}}";
     };
 
-    /*
-      greetd = {
+    greetd = {
       enable = true;
       vt = 3;
       settings = {
@@ -32,7 +31,6 @@
         };
       };
     };
-    */
 
     smartd = {
       enable = false;
@@ -67,9 +65,6 @@
       '';
     };
     */
-
-    #hardware.openrgb.enable = true;
-    #hardware.openrgb.motherboard = "amd";
 
     fwupd.enable = true;
 
