@@ -40,10 +40,7 @@ in {
     defaultUserShell = pkgs.nushell;
   };
 
-  programs.fish.enable = true;
-
   environment.shells = with pkgs; [
-    fish
     nushell
   ];
 }
