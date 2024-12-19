@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Waydroid Float
+Exec=hyprctl keyword windowrule float, Waydroid && hyprctl keyword windowrule size 450 900, Waydroid && hyprctl dispatch exec `waydroid show-full-ui &` && hyprctl reload
+Categories=X-WayDroid-App;
+X-Purism-FormFactor=Workstation;Mobile;
+Icon=waydroid
+NoDisplay=false
