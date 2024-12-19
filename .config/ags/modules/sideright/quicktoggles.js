@@ -164,7 +164,7 @@ export const ModuleInvertColors = async (props = {}) => {
                         }
                     })
             },
-            child: MaterialIcon('invert_colors', 'norm'),
+            child: MaterialIcon('brightness_1', 'norm'),
             setup: setupCursorHover,
             ...props,
         })
