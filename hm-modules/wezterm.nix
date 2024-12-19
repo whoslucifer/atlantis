@@ -65,6 +65,7 @@
 
       window_close_confirmation = "NeverPrompt";
       hide_tab_bar_if_only_one_tab = true;
+      scroll_to_bottom_on_input = true;
 
       window_padding = {
         top = "0cell";
