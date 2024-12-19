@@ -10,6 +10,8 @@ import { BluetoothIndicator, NetworkIndicator } from '../.commonwidgets/statusic
 import { setupCursorHover } from '../.widgetutils/cursorhover.js';
 import { MaterialIcon } from '../.commonwidgets/materialicon.js';
 import { sidebarOptionsStack } from './sideright.js';
+import Notifications from 'resource:///com/github/Aylur/ags/service/notifications.js';
+
 
 export const ToggleIconWifi = (props = {}) => Widget.Button({
     className: 'txt-small sidebar-iconbutton',
@@ -219,6 +221,26 @@ export const ModuleIdleInhibitor = (props = {}) => Widget.Button({ // TODO: Make
     setup: (self) => {
         setupCursorHover(self);
         self.attribute.enabled = !!exec('pidof wayland-idle-inhibitor.py');
+        self.toggleClassName('sidebar-button-active', self.attribute.enabled);
+    },
+    ...props,
+});
+
+export const ModuleDnd = (props = {}) => Widget.Button({
+    attribute: {
+        enabled: false,
+    },
+    className: 'txt-small sidebar-iconbutton',
+    tooltipText: getString('DND'),
+    onClicked: (self) => {
+        Notifications.dnd = !Notifications.dnd;
+        self.attribute.enabled = Notifications.dnd;
+        self.toggleClassName('sidebar-button-active', self.attribute.enabled);
+    },
+    child: MaterialIcon('notifications_off', 'norm'),
+    setup: (self) => {
+        setupCursorHover(self);
+        self.attribute.enabled = Notifications.dnd;
         self.toggleClassName('sidebar-button-active', self.attribute.enabled);
     },
     ...props,
