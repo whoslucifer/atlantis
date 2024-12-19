@@ -147,7 +147,7 @@ export const ModuleInvertColors = async (props = {}) => {
         const Hyprland = (await import('resource:///com/github/Aylur/ags/service/hyprland.js')).default;
         return Widget.Button({
             className: 'txt-small sidebar-iconbutton',
-            tooltipText: getString('Color inversion'),
+            tooltipText: getString('Dim Light'),
             onClicked: (button) => {
                 // const shaderPath = JSON.parse(exec('hyprctl -j getoption decoration:screen_shader')).str;
                 Hyprland.messageAsync('j/getoption decoration:screen_shader')
