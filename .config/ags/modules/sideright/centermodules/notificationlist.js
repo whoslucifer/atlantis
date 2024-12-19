@@ -82,26 +82,17 @@ export default (props) => {
         }),
         setup: setupCursorHover,
     });
-    const silenceButton = ListActionButton('notifications_paused', getString('Silence'), (self) => {
-        Notifications.dnd = !Notifications.dnd;
-        self.toggleClassName('notif-listaction-btn-enabled', Notifications.dnd);
-    });
-    // const silenceToggle = ConfigToggle({
-    //     expandWidget: false,
-    //     icon: 'do_not_disturb_on',
-    //     name: 'Do Not Disturb',
-    //     initValue: false,
-    //     onChange: (self, newValue) => {
-    //         Notifications.dnd = newValue;
-    //     },
-    // })
+    //const silenceButton = ListActionButton('notifications_paused', getString('Silence'), (self) => {
+    //    Notifications.dnd = !Notifications.dnd;
+    //    self.toggleClassName('notif-listaction-btn-enabled', Notifications.dnd);
+    //})
     const clearButton = Revealer({
         transition: 'slide_right',
         transitionDuration: userOptions.animations.durationSmall,
         setup: (self) => self.hook(Notifications, (self) => {
             self.revealChild = Notifications.notifications.length > 0;
         }),
-        child: ListActionButton('clear_all', getString('Clear'), () => {
+        child: ListActionButton('mop', getString('clear'), () => {
             Notifications.clear();
             const kids = notificationList.get_children();
             for (let i = 0; i < kids.length; i++) {
@@ -133,9 +124,7 @@ export default (props) => {
         className: 'txt spacing-h-5',
         children: [
             notifCount,
-            silenceButton,
-            // silenceToggle,
-            // Box({ hexpand: true }),
+            //silenceButton,
             clearButton,
         ]
     });
