@@ -5,11 +5,13 @@ in {
   programs.neovim = {
     enable = true;
     package = pkgs.neovim-unwrapped.override {
-      /*outputChecks = {
+      /*
+        outputChecks = {
         neovim = {
           disallowedRequisites = [ pkgs.somePackage ];
         };
-      };*/
+      };
+      */
     };
     defaultEditor = true;
     withNodeJs = true;
