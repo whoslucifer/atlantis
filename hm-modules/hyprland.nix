@@ -204,7 +204,6 @@
         "Super+Shift, L, exec, swaylock"
         "Control+Super, Slash, exec, pkill anyrun || anyrun"
         "Control+Super, T, exec, ~/.config/ags/scripts/color_generation/switchwall.sh"
-        #"Control+Super, R, exec, killall ags wlsunset ydotool; ags -b hypr"
         "Super, W, exec, ags -t 'overview'"
         "Super, Slash, exec, ags -t 'cheatsheet'"
         "Alt, Q, exec, ags -t 'sideleft'"
