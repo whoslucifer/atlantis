@@ -204,7 +204,7 @@
         "Super+Shift, L, exec, swaylock"
         "Control+Super, Slash, exec, pkill anyrun || anyrun"
         "Control+Super, T, exec, ~/.config/ags/scripts/color_generation/switchwall.sh"
-        "Control+Super, R, exec, killall ags ydotool; ags -b hypr"
+        #"Control+Super, R, exec, killall ags wlsunset ydotool; ags -b hypr"
         "Super, W, exec, ags -t 'overview'"
         "Super, Slash, exec, ags -t 'cheatsheet'"
         "Alt, Q, exec, ags -t 'sideleft'"
@@ -315,7 +315,7 @@
         "Alt, L, exec, ydotool key 106:1 106:0"
       ];
       bindr = [
-        "Control+Super, R, exec, killall ags .ags-wrapped ydotool; ags &"
+        "Control+Super, R, exec, killall ags .ags-wrapped wlsunset ydotool; ags &"
         "Control+Super+Alt, R, exec, hyprctl reload; killall ags ydotool; ags &"
       ];
       binde = [
