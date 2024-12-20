@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
 {
-
+  config,
+  pkgs,
+  ...
+}: {
   # Security / Polkit
   security = {
     polkit.enable = true;
@@ -20,7 +22,7 @@
         }
       })
     '';
-  
+
     pam.services.swaylock = {
       text = ''
         auth include login
@@ -28,7 +30,7 @@
     };
 
     # pam.services.swaylock-effects = {};
- 
+
     # required by wireshark capture packets
     wrappers.dumpcap = {
       source = "${pkgs.wireshark}/bin/dumpcap";
@@ -36,26 +38,24 @@
       owner = "root";
       group = "wireshark";
     };
-
   };
 
   systemd = {
-      user.services.polkit-gnome-authentication-agent-1 = {
-        description = "polkit-gnome-authentication-agent-1";
-        wantedBy = [ "graphical-session.target" ];
-        wants = [ "graphical-session.target" ];
-        after = [ "graphical-session.target" ];
-        serviceConfig = {
-          Type = "simple";
-          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-          Restart = "on-failure";
-          RestartSec = 1;
-          TimeoutStopSec = 10;
-        };
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = ["graphical-session.target"];
+      wants = ["graphical-session.target"];
+      after = ["graphical-session.target"];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
       };
+    };
   };
 
-  
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTRS{idVendor}=="138a", ATTRS{idProduct}=="0090", GROUP="plugdev", MODE="0660"
   '';
@@ -69,8 +69,4 @@
   services.fprintd.enable = true;
   services.fprintd.tod.enable = true;
   services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
-
 }
-  
-      
-
