@@ -33,9 +33,6 @@
       protonvpn-gui
       fastfetch
 
-      # tools
-      thunderbird
-      metadata-cleaner
       onlyoffice-bin
       libreoffice-fresh
       audacity

@@ -20,6 +20,8 @@
     pkg-config
     dbus-glib
 
+    xorg.xhost # distrobox kali xfce
+
     #for ags new
     cloudflare-warp
     cloudflared
