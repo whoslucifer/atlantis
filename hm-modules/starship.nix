@@ -1,5 +1,4 @@
-{ lib, ... }:
-let
+{lib, ...}: let
   lang = icon: color: {
     symbol = icon;
     format = "[$symbol ](${color})";
@@ -9,10 +8,10 @@ let
     left = "";
     right = "";
   };
-in
-{
+in {
   programs.starship = {
     enable = true;
+    enableFishIntegration = true;
     settings = {
       add_newline = true;
       format = lib.strings.concatStrings [
@@ -39,7 +38,7 @@ in
         format = "  ";
       };
       continuation_prompt = "∙  ┆ ";
-      line_break = { disabled = false; };
+      line_break = {disabled = false;};
       status = {
         symbol = "✗";
         not_found_symbol = "󰍉 Not Found";
