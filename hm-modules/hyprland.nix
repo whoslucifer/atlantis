@@ -328,10 +328,8 @@
         "noblur,.*" # Disables blur for windows. Substantially improves performance.
         "opacity 0.89 override 0.89 override, .*" # Applies transparency to EVERY WINDOW
         "float, ^(steam)$"
-        #"float, Waydroid"
-        #"size 450 900, Waydroid"
         "float, .protonvpn-app-wrapped"
-        "size 500 650, .protonvpn-app-wrapped"
+        "size 400 700, .protonvpn-app-wrapped"
         "float, polkit-gnome-authentication-agent-1"
         "size 300 300, polkit-gnome-authentication-agent-1"
         "float, Genymotion Player"
