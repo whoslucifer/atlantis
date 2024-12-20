@@ -7,7 +7,7 @@
   # services to start
   services = {
     xserver = {
-      enable = false;
+      enable = true;
       #videoDrivers = ["intel"];
       xkb = {
         layout = "us";
@@ -17,10 +17,11 @@
 
     displayManager = {
       sessionPackages = [pkgs.hyprland];
-      sddm.enable = false;
+      sddm.enable = true;
       sddm.theme = "${import ../system/sddm.nix {inherit pkgs;}}";
     };
 
+    /*
     greetd = {
       enable = true;
       vt = 3;
@@ -31,6 +32,7 @@
         };
       };
     };
+    */
 
     smartd = {
       enable = false;
