@@ -6,6 +6,7 @@
 }: let
   aliases = {
     "db" = "distrobox";
+    "kali" = "distrobox enter kali";
     "tree" = "eza --tree";
     "v" = "nvim";
     "cat" = "bat";
