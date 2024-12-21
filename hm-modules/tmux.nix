@@ -96,12 +96,12 @@
 
   git = let
     icon = pkgs.writeShellScript "branch" ''
-      git -C "$1" branch && echo " "
+      git -C "$1" branch && echo "#[fg=white]  on #[fg=magenta]󰘬 "
     '';
     branch = pkgs.writeShellScript "branch" ''
       git -C "$1" rev-parse --abbrev-ref HEAD
     '';
-  in "#[fg=magenta]#(${icon} #{pane_current_path})#(${branch} #{pane_current_path})";
+  in "#[fg=magenta]#(${icon} #{pane_current_path})#[fg=magenta]#(${branch}  #{pane_current_path})";
 
   separator = "#[fg=${fg}]|";
 in {
