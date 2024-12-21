@@ -4,38 +4,33 @@
     tlp = {
       enable = true;
       settings = {
-        CPU_SCALING_GOVERNOR_ON_AC = "schedutil";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "ondemand"; #powersave
 
-        CPU_ENERGY_PERF_POLICY_ON_AC = "balance-power";
-        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+        CPU_ENERGY_PERF_POLICY_ON_AC = "performance"; #balance-power
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "balance-performance"; #power
 
-        PLATFORM_PROFILE_ON_AC = "low-power";
-        PLATFORM_PROFILE_ON_BAT = "low-power";
+        PLATFORM_PROFILE_ON_AC = "performance"; #low-power
+        PLATFORM_PROFILE_ON_BAT = "balanced"; #low-power
 
         USB_EXCLUDE_BTUSB = 1;
 
-        RADEON_DPM_PERF_LEVEL_ON_AC = "auto";
-        RADEON_DPM_PERF_LEVEL_ON_BAT = "low";
+        RADEON_DPM_PERF_LEVEL_ON_AC = "high"; #auto
+        RADEON_DPM_PERF_LEVEL_ON_BAT = "auto"; #low
 
         DISK_IOSCHED = ["none"];
 
         # Battery charge thresholds for office usage
-        START_CHARGE_THRESH_BAT0 = 40;
-        STOP_CHARGE_THRESH_BAT0 = 50;
+        START_CHARGE_THRESH_BAT1 = 30;
+        STOP_CHARGE_THRESH_BAT1 = 80;
 
         # Battery charge thresholds for on-road usage
-        # START_CHARGE_THRESH_BAT0 = 85;
-        # STOP_CHARGE_THRESH_BAT0 = 90;
+        # START_CHARGE_THRESH_BAT1 = 85;
+        # STOP_CHARGE_THRESH_BAT1 = 90;
       };
     };
     power-profiles-daemon = {
       enable = false;
     };
   };
-
-  # Disable fingerprint reader
-  services.fprintd.enable = true;
-  services.fprintd.tod.enable = true;
-  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
 }
