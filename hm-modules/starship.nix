@@ -17,6 +17,7 @@ in {
       format = lib.strings.concatStrings [
         "$nix_shell"
         "$os"
+        "$cmd_duration"
         "$directory"
         "$container"
         "$git_branch $git_status"
@@ -27,12 +28,18 @@ in {
         "$java"
         "$c"
         "$golang"
-        "$cmd_duration"
+        #"$cmd_duration"
         "$status"
         "$line_break"
-        "[ ](bold purple)"
+        "$character"
         ''''${custom.space}''
       ];
+
+      character = {
+        success_symbol = "[ ](bold fg:purple)";
+        error_symbol = "[ 󰅙](bold fg:red)";
+      };
+
       custom.space = {
         when = ''! test $env'';
         format = "  ";
@@ -40,9 +47,9 @@ in {
       continuation_prompt = "∙  ┆ ";
       line_break = {disabled = false;};
       status = {
-        symbol = "✗";
-        not_found_symbol = "󰍉 Not Found";
-        not_executable_symbol = " Can't Execute E";
+        symbol = "";
+        not_found_symbol = "not found";
+        not_executable_symbol = "permissions";
         sigint_symbol = "󰂭 ";
         signal_symbol = "󱑽 ";
         success_symbol = "";
@@ -52,7 +59,7 @@ in {
       };
       cmd_duration = {
         min_time = 1000;
-        format = "[$duration ](fg:yellow)";
+        format = "[ $duration](fg:yellow)";
       };
       nix_shell = {
         disabled = false;
@@ -82,7 +89,7 @@ in {
       git_branch = {
         symbol = "󰘬";
         style = "";
-        format = "[[    on](fg:white) $symbol $branch](fg:purple)(:$remote_branch)";
+        format = "[[   on](fg:white) $symbol $branch](fg:purple)(:$remote_branch)";
       };
 
       git_commit = {
@@ -98,15 +105,16 @@ in {
       */
       git_status = {
         conflicted = " 🏳 ";
-        ahead = " 🏎💨 ";
-        behind = " 😰 ";
-        diverged = " 😵 ";
-        untracked = " 🤷 ‍";
+        ahead = " 🗽 ";
+        behind = " 👻 ";
+        diverged = " 🤞 ";
+        untracked = " 👽 ";
         stashed = " 📦 ";
-        modified = " 🛠️ ";
-        #staged = '[++\($count\)](green)';
-        renamed = " ✍️ ";
-        deleted = " 🗑";
+        modified = " 📖 ";
+        renamed = " 🎭 ";
+        deleted = " 🗑️ ";
+        staged = "`++($count)(green)`";
+        format = "($conflicted)($ahead)($behind)($diverged)($untracked)($stashed)($modified)($renamed)($deleted)";
       };
 
       os = {
