@@ -21,9 +21,11 @@
     "x" = "clear";
 
     "gs" = "git status";
-    "gd" = "bash -c 'git diff \"$@\" | delta' _";
+    "gd" = "git diff";
+    "gdd" = "bash -c 'git diff \"$@\" | delta' _";
     "gb" = "git branch";
     "gch" = "git checkout";
+    "gcl" = "git clone";
     "gc" = "git commit";
     "ga" = "git add";
     "gp" = "git push";
