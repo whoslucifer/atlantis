@@ -80,10 +80,35 @@ in {
       #   "Vault" = "󱉽 ";
       # };
       git_branch = {
-        symbol = "";
+        symbol = "󰘬";
         style = "";
-        format = "[ $symbol $branch](fg:purple)(:$remote_branch)";
+        format = "[[    on](fg:white) $symbol $branch](fg:purple)(:$remote_branch)";
       };
+
+      git_commit = {
+        commit_hash_length = 4;
+        tag_symbol = " ";
+      };
+
+      /*
+      git_state = {
+      format = '[\($state( $progress_current of $progress_total)\)]($style) ';
+      cherry_pick = "[🍒 PICKING](bold red)";
+      };
+      */
+      git_status = {
+        conflicted = " 🏳 ";
+        ahead = " 🏎💨 ";
+        behind = " 😰 ";
+        diverged = " 😵 ";
+        untracked = " 🤷 ‍";
+        stashed = " 📦 ";
+        modified = " 🛠️ ";
+        #staged = '[++\($count\)](green)';
+        renamed = " ✍️ ";
+        deleted = " 🗑";
+      };
+
       os = {
         disabled = false;
         format = "$symbol";
