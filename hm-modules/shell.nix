@@ -36,6 +36,28 @@
     "dev" = "nix develop -c nvim";
   };
 
+  base64fileBash = ''
+    base64file() {
+      if [ "$#" -ne 2 ]; then
+          echo "Usage: $0 input_file output_file"
+          exit 1
+      fi
+      while IFS= read -r line; do
+          echo -n "$line" | base64 | tr -d '='
+      done < "$1" > "$2"
+    }
+  '';
+
+  /*
+    base64filenu = ''
+    def base64file [input_file output_file] {
+      open $input_file | each {|line|
+      $line | encode base64 | str replace "=" "" | str + "\n" | save -a $output_file
+      }
+    }
+  '';
+  */
+
   completionDir = pkgs.bash-completion + "/etc/bash_completion.d";
 
   completionScripts = builtins.attrNames (builtins.readDir completionDir);
@@ -53,6 +75,7 @@ in {
     enable = true;
     initExtra = "
       SHELL=${pkgs.bash}
+      ${base64fileBash}
       ${completionSource}
     ";
   };
