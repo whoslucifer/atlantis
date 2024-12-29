@@ -11,7 +11,6 @@
       #gui
       (mpv.override {scripts = [mpvScripts.mpris];})
       d-spy
-      dolphin
       #figma-linux
       kolourpaint
       #github-desktop
