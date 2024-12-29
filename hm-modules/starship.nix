@@ -104,15 +104,15 @@ in {
       };
       */
       git_status = {
-        conflicted = " 🏳 ";
-        ahead = " 🗽 ";
-        behind = " 👻 ";
-        diverged = " 🤞 ";
-        untracked = " 👽 ";
-        stashed = " 📦 ";
-        modified = " 📖 ";
-        renamed = " 🎭 ";
-        deleted = " 🗑️ ";
+        conflicted = " conflicted";
+        ahead = " ahead";
+        behind = " behind";
+        diverged = " diverged";
+        untracked = " untracked";
+        stashed = " stashed";
+        modified = " modified";
+        renamed = " renamed";
+        deleted = " deleted";
         staged = "`++($count)(green)`";
         format = "($conflicted)($ahead)($behind)($diverged)($untracked)($stashed)($modified)($renamed)($deleted)";
       };
