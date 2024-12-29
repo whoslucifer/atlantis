@@ -84,6 +84,8 @@
 
       audible_bell = "Disabled";
 
+      max_fps = 120;
+
       default_prog = ["${pkgs.tmux}/bin/tmux"];
     };
 
