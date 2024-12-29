@@ -72,7 +72,7 @@
       if [ "$state" == "charging" ] || [ "$state" == "fully-charged" ]; then echo "󰂄"
       elif [ $percentage -ge 75 ]; then echo "󱊣"
       elif [ $percentage -ge 50 ]; then echo "󱊢"
-      elif [ $percentage -ge 25 ]; then echo "󱊡"
+      elif [ $percentage -ge 20 ]; then echo "󱊡"
       elif [ $percentage -ge 0  ]; then echo "󰂎"
       fi
     '';
@@ -82,7 +82,7 @@
       if [ "$state" == "charging" ] || [ "$state" == "fully-charged" ]; then echo "green"
       elif [ $percentage -ge 75 ]; then echo "green"
       elif [ $percentage -ge 50 ]; then echo "${fg2}"
-      elif [ $percentage -ge 30 ]; then echo "yellow"
+      elif [ $percentage -ge 20 ]; then echo "yellow"
       elif [ $percentage -ge 0  ]; then echo "red"
       fi
     '';
