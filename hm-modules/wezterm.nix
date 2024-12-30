@@ -120,6 +120,9 @@
       config.keys = {
        	{ key = "p", mods = "CTRL", action = wa.EmitEvent("padding-off") },
         { key = "o", mods = "CTRL", action = wa.EmitEvent("toggle-opacity") },
+
+        {key="Tab", mods="CTRL", action=wezterm.action.SendKey {key="`", mods="CTRL"}},
+
       }
     '';
   };
