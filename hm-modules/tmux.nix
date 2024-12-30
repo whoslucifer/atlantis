@@ -111,7 +111,7 @@ in {
       vim-tmux-navigator
       yank
     ];
-    prefix = "C-Space";
+    prefix = "M-t";
     baseIndex = 1;
     escapeTime = 0;
     keyMode = "vi";
@@ -119,13 +119,13 @@ in {
     shell = "${pkgs.nushell}/bin/nu";
     extraConfig = ''
       set-option -sa terminal-overrides ",xterm*:Tc"
-      bind v copy-mode
+      bind c copy-mode
       bind-key -T copy-mode-vi v send-keys -X begin-selection
       bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
       bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
       bind-key b set-option status
-      bind '"' split-window -v -c "#{pane_current_path}"
-      bind % split-window -h -c "#{pane_current_path}"
+      bind v split-window -v -c "#{pane_current_path}"
+      bind h split-window -h -c "#{pane_current_path}"
 
       set-option -g default-terminal "screen-256color"
       set-option -g status-right-length 100
