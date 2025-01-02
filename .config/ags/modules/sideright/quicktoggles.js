@@ -214,13 +214,13 @@ export const ModuleIdleInhibitor = (props = {}) => Widget.Button({ // TODO: Make
     onClicked: (self) => {
         self.attribute.enabled = !self.attribute.enabled;
         self.toggleClassName('sidebar-button-active', self.attribute.enabled);
-        if (self.attribute.enabled) Utils.execAsync(['bash', '-c', `pidof wayland-idle-inhibitor.py || uv run ${App.configDir}/scripts/wayland-idle-inhibitor.py`]).catch(print)
-        else Utils.execAsync('pkill -f wayland-idle-inhibitor.py').catch(print);
+        if (self.attribute.enabled) Utils.execAsync(['bash', '-c', `pidof nodeps-wayland-idle-inhibitor.py || ${App.configDir}/scripts/nodeps-wayland-idle-inhibitor.py`]).catch(print)
+        else Utils.execAsync('pkill -f nodeps-wayland-idle-inhibitor.py').catch(print);
     },
     child: MaterialIcon('earthquake', 'norm'),
     setup: (self) => {
         setupCursorHover(self);
-        self.attribute.enabled = !!exec('pidof wayland-idle-inhibitor.py');
+        self.attribute.enabled = !!exec('pidof nodeps-wayland-idle-inhibitor.py');
         self.toggleClassName('sidebar-button-active', self.attribute.enabled);
     },
     ...props,
