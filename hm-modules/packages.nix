@@ -42,10 +42,8 @@
       handbrake #video format converter
       impression #rufus alternative
       easyeffects
-      upscayl #offline image upscaler
       textpieces #text encoder and decoder
       mousai # shazam alternative
-      stirling-pdf # best pdf actions tool
       gimp
       bat
       eza
