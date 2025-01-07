@@ -1,5 +1,4 @@
-{pkgs, ...}: {
-  # Set TLP power profile
+{...}: {
   services = {
     tlp = {
       enable = true;
