@@ -16,7 +16,7 @@
     #blueberry
     gtksourceview
     gtksourceview4
-    cloudflare-warp
+    #cloudflare-warp
     gsettings-desktop-schemas
     matugen
     swayidle
