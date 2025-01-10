@@ -20,12 +20,12 @@
         DISK_IOSCHED = ["none"];
 
         # Battery charge thresholds for office usage
-        START_CHARGE_THRESH_BAT1 = 30;
-        STOP_CHARGE_THRESH_BAT1 = 80;
+        #START_CHARGE_THRESH_BAT1 = 30;
+        #STOP_CHARGE_THRESH_BAT1 = 80;
 
         # Battery charge thresholds for on-road usage
-        # START_CHARGE_THRESH_BAT1 = 85;
-        # STOP_CHARGE_THRESH_BAT1 = 90;
+        START_CHARGE_THRESH_BAT1 = 85;
+        STOP_CHARGE_THRESH_BAT1 = 90;
       };
     };
     power-profiles-daemon = {
