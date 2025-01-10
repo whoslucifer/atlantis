@@ -1,18 +1,9 @@
 {pkgs, ...}: let
   neovim_config = ./../.config/nvim;
 in {
-  # Neovim text editor configuration
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim-unwrapped.override {
-      /*
-        outputChecks = {
-        neovim = {
-          disallowedRequisites = [ pkgs.somePackage ];
-        };
-      };
-      */
-    };
+    package = pkgs.neovim-unwrapped;
     defaultEditor = true;
     withNodeJs = true;
     withPython3 = true;
@@ -21,6 +12,7 @@ in {
     extraPackages = with pkgs; [
       alejandra
       black
+      gnumake
       golangci-lint
       gopls
       gotools
@@ -45,7 +37,6 @@ in {
     ];
   };
 
-  # source lua config from this repo
   xdg.configFile = {
     "nvim" = {
       source = "${neovim_config}";
