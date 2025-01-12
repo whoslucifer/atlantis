@@ -6,8 +6,8 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:hyprwm/Hyprland?rev=d26439a0fe5594fb26d5a3c01571f9490a9a2d2c&submodules=1";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     stylix.url = "github:danth/stylix";
