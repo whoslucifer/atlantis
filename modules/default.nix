@@ -14,9 +14,13 @@
 
     ./desktop/gnome.nix
 
-    #./custom/burpsuitepro.nix
+    ./custom/burpsuitepro/burp.nix
+
+    ./default/theme.nix
 
     ./default/programs.nix
+    ./default/ags.nix
+    ./default/neovim.nix
     ./default/packages.nix
     ./default/tor.nix
     ./default/virtualization.nix
@@ -38,6 +42,6 @@
     ./developer/mysql.nix
     ./developer/postgresql.nix
 
-    ./pentester/default.nix
+    #./pentester/default.nix
   ];
 }
