@@ -1,4 +1,4 @@
-{ pkgs, ...}: {
+{pkgs, ...}: {
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -11,7 +11,7 @@
     enable = true;
     powerOnBoot = false;
   };
-  
+
   environment.systemPackages = with pkgs; [
     blueberry
   ];
