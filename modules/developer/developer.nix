@@ -10,12 +10,8 @@
     go
     gcc
 
-    jdk23
     openjdk23
-    openjdk17
-
     uv
-
     ruby
 
     android-tools
@@ -26,16 +22,6 @@
 
     nodejs
     yarn
-
-    jetbrains.idea-community-bin
-    netbeans
-
-    php
-
-    jetbrains.pycharm-community-bin
-
-    arduino
-    arduino-ide
 
     waydroid
   ];
