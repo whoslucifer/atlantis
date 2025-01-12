@@ -37,13 +37,8 @@ in {
       plugdev = {};
     };
 
-    defaultUserShell = pkgs.nushell;
+    defaultUserShell = pkgs.fish;
   };
 
   programs.fish.enable = true;
-
-  environment.shells = with pkgs; [
-    nushell
-    fish
-  ];
 }
