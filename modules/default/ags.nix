@@ -33,6 +33,7 @@ in {
   environment.systemPackages = [
     agsWithDeps
     pkgs.material-icons
+    pkgs.swayidle
     pkgs.material-symbols
     (pkgs.python312.withPackages (p: [
       p.materialyoucolor
