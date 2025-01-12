@@ -60,12 +60,6 @@
     SUBSYSTEM=="usb", ATTRS{idVendor}=="138a", ATTRS{idProduct}=="0090", GROUP="plugdev", MODE="0660"
   '';
 
-  environment.systemPackages = with pkgs; [
-    fprintd
-    open-fprintd
-    libfprint
-  ];
-
   services.fprintd.enable = true;
   services.fprintd.tod.enable = true;
   services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
