@@ -182,7 +182,7 @@ in {
           (map completion names);
     in ''
       $env.config = ${conf};
-      ${completions ["cargo" "git" "nix" "npm" "poetry" "curl"]}
+      ${completions ["cargo" "git" "nix" "npm" "curl"]}
 
       zoxide init --cmd cd nushell | save -f ~/.zoxide.nu
 
