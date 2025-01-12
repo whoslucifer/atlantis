@@ -1,15 +1,18 @@
-{ lib, pkgs, config, ... }:
-with lib;
-let
-  cfg = config.drivers.intel;
-in
 {
+  lib,
+  pkgs,
+  config,
+  ...
+}:
+with lib; let
+  cfg = config.drivers.intel;
+in {
   options.drivers.intel = {
     enable = mkEnableOption "Enable Intel Graphics Drivers";
   };
 
   config = mkIf cfg.enable {
-    services.xserver.videoDrivers = [ "modesetting" ];
+    services.xserver.videoDrivers = ["modesetting"];
     hardware.cpu.intel.updateMicrocode = true;
     hardware.enableRedistributableFirmware = true;
 
@@ -26,11 +29,10 @@ in
         mesa
         libGL
         libGLU
-
       ];
     };
-    
-    environment.systemPackages =  with pkgs; [
+
+    environment.systemPackages = with pkgs; [
       mesa
       mesa-demos
       vpl-gpu-rt
@@ -39,10 +41,9 @@ in
       intel-compute-runtime
       libvdpau-va-gl
       libva
-			libva-utils
+      libva-utils
 
       egl-wayland
-
     ];
   };
 }
