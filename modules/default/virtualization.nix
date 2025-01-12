@@ -26,6 +26,5 @@
     bottles
     wine
     vulkan-tools
-    #genymotion
   ];
 }
