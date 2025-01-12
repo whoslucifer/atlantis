@@ -3,7 +3,7 @@
     ./system/boot.nix
     ./system/boot-loader.nix
     ./system/sddm-deps.nix
-    #./system/laptop.nix
+    ./system/laptop.nix
     ./system/locales.nix
     ./system/networking.nix
     ./system/hotspot.nix
