@@ -1,10 +1,9 @@
 {
   config,
   pkgs,
-  inputs, 
+  inputs,
   ...
 }: {
-
   environment.systemPackages = with pkgs; [
     btrfs-progs
     curl
@@ -13,6 +12,7 @@
     htop
     git
     nix-prefetch-git
+    nix-prefetch
     cpufrequtils
     glib #for gsettings to work
     gsettings-qt
@@ -26,6 +26,5 @@
     usbutils
     iw # networking
     inxi
-
   ];
 }
