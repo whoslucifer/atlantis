@@ -46,7 +46,7 @@ fi
 
 cd "$CONFIG_DIR/scripts/" || exit
 if [[ "$1" = "#"* ]]; then # this is a color
-	uv run color_generation/generate_colors_material.py --color "$1" \
+	color_generation/generate_colors_material.py --color "$1" \
 		--mode "$lightdark" --scheme "$materialscheme" --transparency "$transparency" \
 		--termscheme $terminalscheme --blend_bg_fg \
 		>"$CACHE_DIR"/user/generated/material_colors.scss
@@ -59,7 +59,7 @@ elif [ "$backend" = "material" ]; then
 	if [ "$3" = "--smart" ]; then
 		smartflag='--smart'
 	fi
-	uv run color_generation/generate_colors_material.py --path "$1" \
+	color_generation/generate_colors_material.py --path "$1" \
 		--mode "$lightdark" --scheme "$materialscheme" --transparency "$transparency" \
 		--termscheme $terminalscheme --blend_bg_fg \
 		--cache "$STATE_DIR/user/color.txt" $smartflag \
