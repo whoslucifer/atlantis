@@ -10,6 +10,7 @@
       ++ [
         pkgs.gtksourceview3
         pkgs.gtk3
+        pkgs.zlib
         pkgs.gobject-introspection
         pkgs.ollama
         pkgs.pywal
