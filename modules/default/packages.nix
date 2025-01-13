@@ -18,6 +18,8 @@
     xwayland
     google-chrome
     ani-cli
+    dig
+    traceroute
     manga-cli
     yt-dlp
     telegram-desktop
@@ -31,8 +33,6 @@
     (mpv.override {scripts = [mpvScripts.mpris];})
     d-spy
     #figma-linux
-    kolourpaint
-    #github-desktop
     nautilus
     icon-library
     dconf-editor
