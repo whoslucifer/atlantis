@@ -19,7 +19,7 @@ local config = {
 		},
 	},
 	["default_cursor_style"] = "BlinkingBar",
-	["default_prog"] = { "/nix/store/d8hzzxpnn22h6081a95r4889bc4zpb0y-tmux-3.5a/bin/tmux" },
+	["default_prog"] = { "/run/current-system/sw/bin/tmux" },
 	["enable_wayland"] = true,
 	["hide_tab_bar_if_only_one_tab"] = true,
 	["inactive_pane_hsb"] = { ["brightness"] = 0.800000, ["saturation"] = 0.900000 },
