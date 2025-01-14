@@ -23,6 +23,7 @@
     manga-cli
     yt-dlp
     telegram-desktop
+    carapace
     vesktop
     localsend
 
