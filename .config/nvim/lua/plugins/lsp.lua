@@ -60,7 +60,13 @@ return {
             },
           },
         },
-        ["typescript-language-server"] = {},
+        tsserver = {
+          settings = {
+            completions = {
+              completeFunctionCalls = true,
+            },
+          },
+        },
       },
     },
   },
