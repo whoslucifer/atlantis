@@ -184,6 +184,9 @@ in {
       $env.config = ${conf};
       ${completions ["cargo" "git" "nix" "npm" "curl"]}
 
+      mkdir ($nu.data-dir | path join "vendor/autoload")
+      starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+
       zoxide init --cmd cd nushell | save -f ~/.zoxide.nu
 
       source ~/.zoxide.nu
