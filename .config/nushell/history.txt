@@ -1,0 +1,112 @@
+mv nushell/ ../misc/
+ls
+cd nushell/
+ls
+cp config.nu ~/.config/nushell/
+cp env.nu ~/.config/nushell/
+ns
+ls
+nvim hm-modules/default.nix
+hs
+ls
+clear
+cd
+cd .config/
+ls
+which nushell/
+which nu
+nvim tmux/tmux.conf
+clear
+tmux kill-server
+ls
+cd nix/
+ls
+git status 
+ls
+clear
+ls
+clear
+ls
+pwd
+l
+whoami
+ls
+clear
+ls
+pwd
+ls
+git status 
+clear
+l
+ls
+clear
+ls
+whoami
+ls
+clar
+clear
+ls
+whoami
+ls
+pwd
+ls
+clear
+whoami
+ls
+clear
+ls
+pwd
+l
+whoami
+ls
+clear
+ls
+clear
+ls
+cd
+ls
+clear
+ls
+clear
+ls
+cd .cache/
+;s
+ls
+cd
+ls
+cd .config/
+l
+ls
+clear
+ls
+clear
+ls
+pwd
+ls
+clear
+ls
+whoami
+ls
+cd
+clear
+ls
+cd .config/
+ls
+cd nushell/
+ls
+nvim config.nu 
+ls
+cd
+nvim .zoxide.nu 
+ls
+clear
+ls
+cp .zoxide.nu ~/.config/nushell/
+ls
+clear
+cp .zoxide.nu ~/nix/.config/
+ls
+clear
+ls
+cd 
+ls
