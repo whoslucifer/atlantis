@@ -14,7 +14,7 @@
 
     ./desktop/gnome.nix
 
-    ./custom/burpsuitepro/burp.nix
+    #./custom/burpsuitepro/burp.nix
 
     ./default/theme.nix
 
