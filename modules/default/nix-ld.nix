@@ -3,6 +3,8 @@
     enable = true;
     libraries = with pkgs; [
       zlib
+      stdenv.cc.cc
+      glibc
     ];
   };
 }
