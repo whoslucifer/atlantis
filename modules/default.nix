@@ -22,7 +22,7 @@
     ./developer/neovim.nix
     ./default/packages.nix
     ./system/networking/tor.nix
-    ./default/virtualization.nix
+    ./virtualization/virtualization.nix
     ./desktop/extra.nix
     ./desktop/sound.nix
     ./default/spotify.nix

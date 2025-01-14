@@ -1,13 +1,15 @@
 {pkgs, ...}: {
   services = {
     xserver.desktopManager.gnome.enable = true;
-    xdg.portal.enable = true; #required for flatpak
   };
+
   programs = {
     hyprland.enable = true;
     xwayland.enable = true;
     nm-applet.indicator = true;
   };
+
+  xdg.portal.enable = true; #required for flatpak
 
   environment.systemPackages = with pkgs; [
     xwayland
