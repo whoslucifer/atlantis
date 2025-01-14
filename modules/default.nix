@@ -1,39 +1,38 @@
 {...}: {
   imports = [
-    ./system/boot.nix
-    ./system/boot-loader.nix
-    ./system/sddm-deps.nix
-    #./system/laptop.nix
+    ./system/boot/boot-loader.nix
+    ./system/boot/boot.nix
+    ./desktop/displayManager/sddm.nix
     ./system/locales.nix
-    ./system/networking.nix
-    ./system/hotspot.nix
+    ./system/networking/networking.nix
+    ./system/networking/hotspot.nix
 
-    ./system/intel-drivers.nix
-    ./system/vm-guest-services.nix
-    ./system/local-hardware-clock.nix
+    ./system/hardware/intel-drivers.nix
+    ./system/hardware/laptop.nix
+    ./system/hardware/local-hardware-clock.nix
+    ./system/hardware/vm-guest-services.nix
 
-    ./desktop/gnome.nix
+    ./desktop/sessions.nix
 
     #./custom/burpsuitepro/burp.nix
 
-    ./default/theme.nix
+    ./desktop/ags.nix
+    ./desktop/theme.nix
 
-    ./default/programs.nix
-    ./default/ags.nix
-    ./default/neovim.nix
+    ./developer/neovim.nix
     ./default/packages.nix
-    ./default/tor.nix
+    ./system/networking/tor.nix
     ./default/virtualization.nix
-    ./default/extra.nix
-    ./default/sound.nix
+    ./desktop/extra.nix
+    ./desktop/sound.nix
     ./default/spotify.nix
     ./default/zen-browser.nix
     ./default/services.nix
-    ./default/security.nix
+    ./system/security.nix
     ./default/insecure.nix
     ./default/utils.nix
-    ./default/thunar.nix
-    ./default/zram.nix
+    ./desktop/thunar.nix
+    ./system/zram.nix
 
     ./stable/default.nix
 

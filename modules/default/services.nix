@@ -4,63 +4,7 @@
   username,
   ...
 }: {
-  /*
-  environment.etc."xdg/autostart/gnome-distrobox.desktop" =
-  pkgs.runCommand "gnome-distrobox.desktop" {
-    buildInputs = [pkgs.distrobox pkgs.gnome-session];
-  } ''
-    mkdir -p $out
-    echo "[Desktop Entry]
-    Name=GNOME (DistroBox)
-    Exec=${pkgs.distrobox}/bin/distrobox enter -n kalignome -- /usr/bin/gnome-session
-    Type=Application
-    X-GNOME-Autostart-enabled=true
-    NoDisplay=false" > $out/gnome-distrobox.desktop
-  '';
-  */
-
   services = {
-    xserver = {
-      enable = true;
-      #videoDrivers = ["intel"];
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
-    };
-
-    displayManager = {
-      sessionPackages = [
-        pkgs.hyprland
-        #pkgs.distrobox
-        /*
-        (pkgs.symlinkJoin
-        {
-          name = "gnome-distrobox-session";
-          paths = [
-            pkgs.distrobox
-            pkgs.gnome-session
-          ];
-        })
-        */
-      ];
-      sddm.enable = true;
-      sddm.theme = "${import ../system/sddm.nix {inherit pkgs;}}";
-    };
-
-    /*
-    greetd = {
-      enable = true;
-      vt = 3;
-      settings = {
-        default_session = {
-          user = username;
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland"; # start Hyprland with a TUI login manager
-        };
-      };
-    };
-    */
-
     smartd = {
       enable = false;
       autodetect = true;
@@ -123,6 +67,4 @@
     #  configDir = "/home/${username}/.config/syncthing";
     #};
   };
-
-  xdg.portal.enable = true; #required for flatpak
 }

@@ -10,9 +10,7 @@
     wget
     btop
     htop
-    git
-    nix-prefetch-git
-    nix-prefetch
+    gnumake
     cpufrequtils
     glib #for gsettings to work
     gsettings-qt
@@ -20,9 +18,6 @@
     libappindicator
     pciutils
     xdg-user-dirs
-    xdg-utils
-    networkmanagerapplet
-    librsvg
     usbutils
     iw # networking
     inxi

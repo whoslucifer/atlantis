@@ -23,6 +23,6 @@
     nodejs
     yarn
 
-    waydroid
+    #waydroid
   ];
 }
