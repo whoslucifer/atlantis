@@ -38,6 +38,8 @@ in {
   fonts = {
     packages = with pkgs; [
       nerd-fonts.space-mono
+      material-icons
+      material-symbols
       gabaritoFont
       nerd-fonts.ubuntu
       nerd-fonts.jetbrains-mono

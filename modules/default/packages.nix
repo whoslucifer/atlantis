@@ -7,27 +7,39 @@
   environment.systemPackages = with pkgs;
   with nodePackages_latest;
   with libsForQt5; [
-    ghostty
-    wezterm
+    gnumake
 
+    ghostty
+    anyrun
+    jq
+    tmux
+    wezterm
+    git
+
+    xwayland
     google-chrome
     ani-cli
-    dig
-    traceroute
     manga-cli
-    git
     yt-dlp
     telegram-desktop
     vesktop
     localsend
 
-    nix-prefetch-git
+    starship
+    #for ags new
+    ##cloudflare-warp
+    #cloudflared
     (mpv.override {scripts = [mpvScripts.mpris];})
     d-spy
     #figma-linux
+    kolourpaint
+    #github-desktop
+    nautilus
     icon-library
     dconf-editor
     qt5.qtimageformats
+    yad
+    swaylock-effects
 
     protonvpn-gui
 
@@ -36,23 +48,48 @@
     spotdl
     delta
     #impression #rufus alternative
+    bat
+    eza
     fd
+    ripgrep
+    fzf
+    tlrc
     acpi
     ffmpeg
+    libnotify
+    gobject-introspection
     #killall
     zip
     unzip
+    glib
+    ydotool
 
     #ddmp
+    zoxide
     file
     entr
 
     # theming tools
-    # gnome-tweaks
+    gradience
+    gnome-tweaks
 
     # hyprland
-    #tesseract
-    #imagemagick
+    brightnessctl
+    cliphist
+    fuzzel
+    grim
+    hyprpicker
+    tesseract
+    imagemagick
+    pavucontrol
+    playerctl
+    swappy
+    slurp
+    swww
+    wayshot
+    wlsunset
+    wl-clipboard
+    wf-recorder
 
     # langs
     gjs
@@ -62,5 +99,11 @@
     eslint
     # very important stuff
     uwuify
+
+    #ags new dots
+    ddcutil
+    bc
+    sass
+    unixtools.top
   ];
 }

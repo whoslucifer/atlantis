@@ -22,6 +22,7 @@
 
     nodejs
     yarn
+    csslint
 
     #waydroid
   ];

@@ -20,7 +20,7 @@
 
   environment.systemPackages = with pkgs;
   with libsForQt5; [
-    qt.qtquickcontrols2
+    qt5.qtquickcontrols2
     qt5.qtgraphicaleffects
   ];
 }

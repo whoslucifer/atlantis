@@ -35,10 +35,11 @@ in {
     agsWithDeps
     pkgs.material-icons
     pkgs.material-symbols
+    pkgs.networkmanagerapplet
     pkgs.bc
     pkgs.ddcutil
     pkgs.glib
-    pkgs.sass
+    #pkgs.sass
     pkgs.unixtools.top
     pkgs.fuzzel
     pkgs.grim

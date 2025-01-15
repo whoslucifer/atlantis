@@ -18,6 +18,7 @@
 
     ./desktop/ags.nix
     ./desktop/theme.nix
+    ./desktop/nushell.nix
 
     ./developer/neovim.nix
     ./default/packages.nix
