@@ -15,6 +15,7 @@
     tmux
     wezterm
     git
+    nix-prefetch-git
 
     xwayland
     google-chrome
@@ -23,6 +24,8 @@
     yt-dlp
     telegram-desktop
     vesktop
+    discord
+    burpsuite
     localsend
 
     starship
