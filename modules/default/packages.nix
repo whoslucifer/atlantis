@@ -93,6 +93,9 @@
     wlsunset
     wl-clipboard
     wf-recorder
+  
+    pkg-config
+    kitty
 
     # langs
     gjs
