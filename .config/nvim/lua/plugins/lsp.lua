@@ -9,6 +9,8 @@ return {
 				"luacheck",
 				"shellcheck",
 				"shfmt",
+				"prettier",
+				"nixpkgs-fmt",
 				"tailwindcss-language-server",
 				"typescript-language-server",
 				"css-lsp",
