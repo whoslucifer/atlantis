@@ -75,8 +75,9 @@
 
     pkgs-stable = import nixpkgs-stable {
       inherit system;
-      config = {
+      nixpkgs.config = {
         allowUnfree = true;
+        allowBroken = true;
       };
     };
   in {
@@ -91,6 +92,13 @@
 
         modules = [
           ./hosts/nix/config.nix
+
+          {  
+            nixpkgs.config = {
+              allowUnfree = true;
+              # allowBroken = true;
+            };
+          }
 
           inputs.distro-grub-themes.nixosModules.${system}.default
 
