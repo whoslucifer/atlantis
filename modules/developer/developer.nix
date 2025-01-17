@@ -15,7 +15,6 @@
     ruby
 
     android-tools
-    vscode
     android-studio
     android-studio-tools
     gradle
