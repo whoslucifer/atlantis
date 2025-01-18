@@ -27,7 +27,6 @@
         pkgs.webp-pixbuf-loader
         pkgs.ydotool
         pkgs.webkitgtk
-        pkgs.python312Packages.materialyoucolor
       ];
   });
 in {
