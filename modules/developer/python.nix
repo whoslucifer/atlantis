@@ -1,8 +1,4 @@
-{
-  pkgs,
-  ...
-}:
-let
+{pkgs, ...}: let
   python-packages = pkgs.python3.withPackages (
     ps:
       with ps; [
@@ -10,14 +6,11 @@ let
         pillow
         materialyoucolor
         setproctitle
-        
+        debugpy # python debug adapter for nvim-dap
       ]
   );
-
-in  
-{
+in {
   environment.systemPackages = [
     python-packages
-
   ];
 }
