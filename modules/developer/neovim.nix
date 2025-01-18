@@ -25,5 +25,7 @@
     tflint
     vscode-langservers-extracted
     yaml-language-server
+
+    delve
   ];
 }
