@@ -1,8 +1,20 @@
 {...}: {
   imports = [
+    ./default/packages.nix
+    ./default/nix-ld.nix
+    ./default/spotify.nix
+    ./default/zen-browser.nix
+    ./default/services.nix
+    ./default/insecure.nix
+    ./default/broken.nix
+    ./default/utils.nix
+
+    ./stable/default.nix
+    # ./custom/burpsuitepro/loader.nix
+    # ./custom/burpsuitepro/burp.nix
+
     ./system/boot/boot-loader.nix
     ./system/boot/boot.nix
-    ./desktop/displayManager/sddm.nix
     ./system/locales.nix
     ./system/networking/networking.nix
     ./system/networking/hotspot.nix
@@ -12,36 +24,25 @@
     ./system/hardware/local-hardware-clock.nix
     ./system/hardware/vm-guest-services.nix
 
+    ./system/networking/tor.nix
+
+    ./system/zram.nix
+    ./system/security.nix
+
     ./desktop/sessions.nix
-
-    #./custom/burpsuitepro/burp.nix
-
     ./desktop/ags.nix
     ./desktop/theme.nix
     ./desktop/nushell.nix
-
-    ./developer/neovim.nix
-    ./default/packages.nix
-    ./system/networking/tor.nix
-    ./virtualization/virtualization.nix
     ./desktop/extra.nix
     ./desktop/sound.nix
-    ./default/spotify.nix
-    ./default/zen-browser.nix
-    ./default/services.nix
-    ./system/security.nix
-    ./default/insecure.nix
-    ./default/utils.nix
     ./desktop/thunar.nix
-    ./system/zram.nix
 
-    ./stable/default.nix
+    ./desktop/displayManager/sddm.nix
 
-    ./default/nix-ld.nix
-    ./developer/developer.nix
-    ./developer/mysql.nix
-    ./developer/postgresql.nix
+    ./virtualization/virtualization.nix
 
-    #./pentester/default.nix
+    ./developer/default.nix
+
+    ./pentester/default.nix
   ];
 }

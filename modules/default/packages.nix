@@ -16,6 +16,7 @@
     wezterm
     git
     nix-prefetch-git
+    yazi
 
     xwayland
     google-chrome
@@ -24,14 +25,8 @@
     yt-dlp
     telegram-desktop
     vesktop
-    discord
-    burpsuite
-    localsend
 
     starship
-    #for ags new
-    ##cloudflare-warp
-    #cloudflared
     (mpv.override {scripts = [mpvScripts.mpris];})
     d-spy
     #figma-linux
@@ -93,7 +88,7 @@
     wlsunset
     wl-clipboard
     wf-recorder
-  
+
     pkg-config
     kitty
 
