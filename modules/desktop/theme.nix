@@ -33,6 +33,11 @@ in {
     adwaita-icon-theme
     moreWaita
     bibata-cursors
+    libsForQt5.qt5ct
+    qt6ct
+    qt6.qtwayland
+    qt6Packages.qtstyleplugin-kvantum
+    libsForQt5.qtstyleplugin-kvantum
   ];
 
   fonts = {
