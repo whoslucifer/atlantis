@@ -26,5 +26,7 @@
     bottles
     wine
     vulkan-tools
+    distrobox
+    boxbuddy
   ];
 }
