@@ -54,6 +54,7 @@
     tlrc
     acpi
     ffmpeg
+
     libnotify
     gobject-introspection
     #killall
