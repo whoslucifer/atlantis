@@ -10,6 +10,8 @@
     go
     gcc
 
+    lazygit
+
     openjdk23
     uv
     ruby
