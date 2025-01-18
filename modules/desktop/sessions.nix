@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   services = {
-    xserver.desktopManager.gnome.enable = true;
+    # xserver.desktopManager.gnome.enable = true;
   };
 
   programs = {
