@@ -1,6 +1,6 @@
 add_newline = true
 # continuation_prompt = "∙  ┆ "
-format = "$nix_shell$os$cmd_duration $directory$container$git_branch $git_status$python$nodejs$lua$rust$java$c$golang$status$line_break$character${custom.space}"
+format = "$nix_shell$os$cmd_duration $directory$container$git_branch $git_status$python$nodejs$lua$rust$java$c$golang$line_break$character${custom.space}"
 
 [c]
 format = "[$symbol ](blue)"
@@ -105,15 +105,3 @@ symbol = " "
 [rust]
 format = "[$symbol ](red)"
 symbol = " "
-
-[status]
-disabled = false
-format = "[$symbol](fg:red)"
-map_symbol = true
-not_executable_symbol = "permissions"
-not_found_symbol = "not found"
-sigint_symbol = "󰂭 "
-signal_symbol = "󱑽 "
-success_symbol = ""
-symbol = ""
-
