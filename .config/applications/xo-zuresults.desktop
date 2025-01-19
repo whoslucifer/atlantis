@@ -3,7 +3,7 @@
 Version=1.0
 Terminal=false
 Type=Application
-Name=zueLearning
-Exec=google-chrome-stable --profile-directory=Default --app=https://elearning.zetech.ac.ke
+Name=zuResults
+Exec=google-chrome-stable --profile-directory=Default --app=https://results.zetech.ac.ke
 Icon=/home/asherah/.local/share/applications/icons/zuni.png
 
