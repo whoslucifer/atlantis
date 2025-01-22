@@ -13,14 +13,11 @@
     sassc
     material-symbols
     material-icons
-    #blueberry
     gtksourceview
     gtksourceview4
-    #cloudflare-warp
     gsettings-desktop-schemas
     matugen
     swayidle
-    #materialyoucolor
     (python312.withPackages (p: [
       p.material-color-utilities
       p.pywayland
@@ -33,7 +30,6 @@
     # configDir = ./../.config/ags;
 
     extraPackages = with pkgs; [
-      #hicolor-icon-theme
       gtksourceview
       material-symbols
       material-icons
@@ -41,15 +37,21 @@
       gtksourceview4
       gsettings-desktop-schemas
       ollama
-      python312Packages.material-color-utilities
-      python312Packages.pywayland
-      python312Packages.setproctitle
       pywal
       sassc
       webkitgtk
       swayidle
       webp-pixbuf-loader
       ydotool
+      bc
+      ddcutil
+      blueberry
+      (python312.withPackages (p: [
+        p.materialyoucolor
+        p.pillow
+        p.setproctitle
+        p.pywayland
+      ]))
     ];
   };
 }
