@@ -1,11 +1,9 @@
 {
   inputs,
   pkgs,
-  system,
   config,
   ...
 }: {
-  # add the home manager module
   imports = [inputs.ags.homeManagerModules.default];
 
   home.packages = with pkgs; [
@@ -19,24 +17,26 @@
   programs.ags = {
     enable = true;
 
-    # null or path, leave as null if you don't want hm to manage the config
-    # configDir = inputs.ags-dots;
     configDir = null;
 
-    # additional packages to add to gjs's runtime
-    extraPackages = with pkgs; [
-      inputs.ags.packages.${pkgs.system}.hyprland
-      inputs.ags.packages.${pkgs.system}.mpris
-      inputs.ags.packages.${pkgs.system}.network
-      inputs.ags.packages.${pkgs.system}.tray
-      inputs.ags.packages.${pkgs.system}.notifd
-      inputs.ags.packages.${pkgs.system}.wireplumber
-      fzf
-      libgtop
-      gtksourceview
-      webkitgtk
-      accountsservice
-    ];
+    extraPackages = with pkgs;
+      [
+        fzf
+        libgtop
+        gtksourceview
+        webkitgtk
+        accountsservice
+      ]
+      ++ (map (component: inputs.ags.packages.${pkgs.system}.${component}) [
+        "hyprland"
+        "mpris"
+        "battery"
+        "bluetooth"
+        "network"
+        "tray"
+        "notifd"
+        "wireplumber"
+      ]);
   };
 
   xdg.configFile."stylix/ags-colors.scss" = with config.lib.stylix.colors; {
