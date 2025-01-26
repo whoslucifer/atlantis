@@ -66,7 +66,7 @@ in {
 
       monitor = [",preferred,auto,1"];
       "exec-once" = [
-        "uwsm app -- waybar &"
+        "uwsm app -- ags run &"
         "uwsm app -- nm-applet &"
         "uwsm app -- wl-paste --type text --watch cliphist store &"
         "uwsm app -- wl-paste --type image --watch cliphist store &"
@@ -182,7 +182,7 @@ in {
       ];
       binde = [
         "SUPER+ALT, Space, togglefloating,"
-        "SUPER, F, fullscreen,"
+        # "SUPER, F, fullscreen,"
         "SUPER, Q, killactive,"
         "SUPER SHIFT, Q, exit,"
         "SUPER, C, exec, hyprctl dispatch centerwindow"
@@ -231,8 +231,6 @@ in {
         "SUPER, mouse_up, workspace, e-1"
 
         # Audio Control
-        ",XF86AudioRaiseVolume, exec, pamixer --increase 5"
-        ",XF86AudioLowerVolume, exec, pamixer --decrease 5"
         "SUPER SHIFT, P, exec, playerctl play-pause"
 
         ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
@@ -240,8 +238,8 @@ in {
 
         ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
         ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        ",XF86MonBrightnessUp, exec, ags run-js 'brightness.screen_value += 0.05;indicator.popup(1);'"
-        ",XF86MonBrightnessDown, exec, ags run-js 'brightness.screen_value -= 0.05;indicator.popup(1);'"
+        ",XF86MonBrightnessUp, exec, brightnessctl set +5%"
+        ",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
 
         ",XF86Search, exec, blueberry"
 
@@ -260,7 +258,7 @@ in {
         # Rofi
         "SUPER, A , exec,  rofi -show drun -show-icons -run-command 'uwsm app -- {cmd}' -theme ~/.config/rofi/themes/default.rasi"
         "SUPER, V, exec, ${clipboard}/bin/rofi-clipboard.sh"
-        "SUPER, W , exec, ${pkgs.rofi-power-menu}/bin/rofi-power-menu"
+        "SUPER, W , exec, ${pkgs.rofi-power-menu}/bin/rofi-powermenu"
 
         "Super, B, exec, zen"
         "Alt, C, exec, google-chrome-stable --app='https://chatgpt.com'"
