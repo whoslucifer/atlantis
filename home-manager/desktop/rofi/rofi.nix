@@ -3,10 +3,10 @@
   pkgs,
   ...
 }: {
-  imports = [./scripts/powermenu.nix];
+  imports = [./scripts/power-menu.nix];
   xdg.configFile = {
     "rofi/themes/default.rasi".source = ./themes/default.rasi;
-    "rofi/themes/powermenu.rasi".source = ./themes/powermenu.rasi;
+    "rofi/themes/power-menu.rasi".source = ./themes/power-menu.rasi;
     "rofi/style.rasi" = with config.lib.stylix.colors; {
       source = pkgs.writeText "my-css" ''
         * {

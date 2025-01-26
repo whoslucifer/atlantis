@@ -22,7 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zen-browser.url = "github:whoslucifer/zen-browser-flake";
+    zen-browser.url = "github:lordhansen/zen-browser-flake";
 
     hyprpaper = {
       url = "github:hyprwm/hyprpaper";

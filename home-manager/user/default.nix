@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./env.nix
-    ./mime.nix
+    ./xdg.nix
     ./mpv.nix
     ./packages.nix
     # ./spicetify.nix

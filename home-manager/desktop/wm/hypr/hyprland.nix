@@ -66,7 +66,7 @@ in {
 
       monitor = [",preferred,auto,1"];
       "exec-once" = [
-        "uwsm app -- ags run &"
+        "uwsm app -- waybar &"
         "uwsm app -- nm-applet &"
         "uwsm app -- wl-paste --type text --watch cliphist store &"
         "uwsm app -- wl-paste --type image --watch cliphist store &"

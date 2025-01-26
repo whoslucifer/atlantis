@@ -27,6 +27,9 @@
     xorg.xev
 
     google-chrome
+    protonvpn-gui
+
+    waybar
 
     # Terminal Stuff
     jq

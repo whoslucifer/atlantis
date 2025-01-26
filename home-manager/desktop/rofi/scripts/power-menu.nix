@@ -13,14 +13,14 @@
   yes = "";
   no = "";
 
-  rofi-powermenu = pkgs.writeShellApplication {
-    name = "rofi-powermenu";
+  rofi-power-menu = pkgs.writeShellApplication {
+    name = "rofi-power-menu";
     text = ''
       # Rofi CMD
       rofi_cmd() {
           rofi -dmenu \
               -mesg " Uptime: ''$(uptime | awk '{print $3}' | cut -d ',' -f 1)" \
-              -theme ${themDir}/powermenu.rasi
+              -theme ${themDir}/power-menu.rasi
       }
 
       # Confirmation CMD
@@ -33,7 +33,7 @@
               -dmenu \
               -p 'Confirmation' \
               -mesg 'Are you Sure?' \
-              -theme ${themDir}/powermenu.rasi
+              -theme ${themDir}/power-menu.rasi
       }
 
       # Ask for confirmation
@@ -106,7 +106,7 @@
 in {
   nixpkgs.overlays = [
     (final: prev: {
-      rofi-powermenu = rofi-powermenu;
+      rofi-power-menu = rofi-power-menu;
     })
   ];
 }
