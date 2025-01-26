@@ -9,7 +9,7 @@ in
   pkgs.stdenv.mkDerivation {
     name = "sddm-theme";
     src = pkgs.fetchFromGitHub {
-      owner = "lordhansen";
+      owner = "sammhansen";
       repo = "SDDM-NIX";
       rev = "9365be88ff1a2dbe5532561086f22b00614ecb9a";
       sha256 = "1sa4hrhv0isq24a60c150ih3drkf1hs4yjxm4mbanafrfvfn77a3";
