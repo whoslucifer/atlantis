@@ -14,7 +14,7 @@
         pkgs.hyprland
       ];
       sddm.enable = true;
-      # sddm.theme = "${import ./sddmtheme.nix {inherit pkgs;}}";
+      sddm.theme = "${import ./sddmtheme.nix {inherit pkgs;}}";
     };
   };
 
